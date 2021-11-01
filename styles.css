@@ -1,0 +1,18 @@
+
+body{
+    background-color: rgb(48, 111, 48);
+}
+
+h1{
+    color: white;
+    text-decoration: underline black;
+    text-align: center;
+}
+
+h2{
+    color: lawngreen;
+}
+
+p{
+    color: lightblue;
+}
