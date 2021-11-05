@@ -16,3 +16,23 @@ h2{
 p{
     color: lightblue;
 }
+
+.textNav{
+    font-family: 'Black Ops One', cursive;
+    font-size: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textNav p{
+    margin: 0px;
+    padding: 0px;
+}
+.clases{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
