@@ -17,22 +17,37 @@
 
 //  CLASE 2 
 
-let consigna = alert("Bienvenido a Ecko Artesanias, responda unas preguntas con Si o No para continuar");
-let nombre = prompt("¿Cuál es tu nombre?");
-let preguntaUno = prompt("¿Conoce nuestros productos?");
+// let consigna = alert("Bienvenido a Ecko Artesanias, responda unas preguntas con Si o No para continuar");
+// let nombre = prompt("¿Cuál es tu nombre?");
+// let preguntaUno = prompt("¿Conoce nuestros productos?");
 
-if ((preguntaUno === "Si") || (preguntaUno ==="SI") || (preguntaUno ==="si")){
-    alert("Gracias por confiar en nosotros");
-} else{
-    alert("Esperamos que le gusten nuestros productos");
+// if ((preguntaUno === "Si") || (preguntaUno ==="SI") || (preguntaUno ==="si")){
+//     alert("Gracias por confiar en nosotros");
+// } else{
+//     alert("Esperamos que le gusten nuestros productos");
+// }
+
+// let preguntaDos = prompt("¿Sabe de que material estan fabricados nuestros muñecos?");
+// if ((preguntaUno === "Si") || (preguntaUno ==="SI") || (preguntaUno ==="si")){
+//     alert("Es nuestra forma de ayudar con la ecologia del planeta");
+// } else{
+//     alert("De madera reciclada y tornillos viejos que fueron recuperados");
+// }
+
+// alert("Bienvenido a nuestra pagina " + nombre);
+
+
+// CLASE 3
+
+let cantProductos = 0;
+let num;
+
+do{
+    num = parseInt(prompt("Ingrese la cantidad que desea comprar"));
+    alert("Usted esta llevando " + num + " producto/s");
+    cantProductos++;
 }
+while(num != 0)
 
-let preguntaDos = prompt("¿Sabe de que material estan fabricados nuestros muñecos?");
-if ((preguntaUno === "Si") || (preguntaUno ==="SI") || (preguntaUno ==="si")){
-    alert("Es nuestra forma de ayudar con la ecologia del planeta");
-} else{
-    alert("De madera reciclada y tornillos viejos que fueron recuperados");
-}
-
-alert("Bienvenido a nuestra pagina " + nombre);
-
+console.log(`En total hay ${num} producto en el carrito`);
+alert(`En total hay ${num} producto en el carrito`);
