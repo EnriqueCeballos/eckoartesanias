@@ -50,7 +50,7 @@ function calculo(cantidad){
     return montoFinal;
 }
 
-let productosTotal = Number(productos);
+let productosTotal = (productos);
 
 if(!isNaN(productosTotal) && productosTotal !== 0){
 
@@ -60,3 +60,14 @@ if(!isNaN(productosTotal) && productosTotal !== 0){
 } else {
     alert("La cantidad ingresada deber ser mayor a 0");
 }
+
+ let otraCompra = prompt("Desea realizar otra compra? SI/NO");
+
+do{  
+    if ((otraCompra === "Si") || (otraCompra ==="SI") || (otraCompra ==="si")){
+    calculo();
+} else {
+    alert("Gracias por visitar nuestra pagina");
+} 
+
+}while (productosTotal === 0);
