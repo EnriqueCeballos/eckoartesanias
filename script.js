@@ -1,73 +1,30 @@
-/*
+// CLASE 5 - OBJETOS
 
-
- CLASE 2 
-
-let consigna = alert("Bienvenido a Ecko Artesanias, responda unas preguntas con Si o No para continuar");
-let nombre = prompt("¿Cuál es tu nombre?");
-let preguntaUno = prompt("¿Conoce nuestros productos?");
-
-if ((preguntaUno === "Si") || (preguntaUno ==="SI") || (preguntaUno ==="si")){
-    alert("Gracias por confiar en nosotros");
-} else{
-    alert("Esperamos que le gusten nuestros productos");
+class Producto{
+constructor(personaje, precio, stock){
+    this.personaje = personaje;
+    this.precio = precio;
+    this.stock = stock;
+    this.vendido = false;
+    }
+    vender(){
+        this.vendido = true;
+    }
 }
 
-let preguntaDos = prompt("¿Sabe de que material estan fabricados nuestros muñecos?");
-if ((preguntaUno === "Si") || (preguntaUno ==="SI") || (preguntaUno ==="si")){
-    alert("Es nuestra forma de ayudar con la ecologia del planeta");
-} else{
-    alert("De madera reciclada y tornillos viejos que fueron recuperados");
-}
+let producto1 = new Producto("Steve", 300, 5);
+let producto2 = new Producto("Sherk", 300, 5);
+let producto3 = new Producto("Buzzlightyear", 300, 1);
+let producto4 = new Producto("Flash", 300, 4);
+let producto5 = new Producto("Capitan America", 300, 5);
+let producto6 = new Producto("Chavo", 300, 4);
+let producto7 = new Producto("Iron Man", 300, 5);
+let producto8 = new Producto("Perrito", 300, 1);
+let producto9 = new Producto("Diamante", 300, 1);
+let producto10 = new Producto("C3P0", 300, 2);
 
-alert("Bienvenido a nuestra pagina " + nombre);
 
-
-CLASE 3
-
-let cantProductos = 0;
-let num;
-
-do{
-    num = parseInt(prompt("Ingrese la cantidad que desea comprar"));
-    alert("Usted esta llevando " + num + " producto/s");
-    cantProductos++;
-}
-while(num != 0)
-
-console.log(`En total hay ${num} producto en el carrito`);
-alert(`En total hay ${num} producto en el carrito`);
-*/
-
-// CLASE 4
-
-let productos = parseInt(prompt("Cantidad de productos"));
-let montoFinal = 0;
-let precioProducto = 300;
-
-function calculo(cantidad){
-    montoFinal = cantidad * precioProducto;
-    return montoFinal;
-}
-
-let productosTotal = (productos);
-
-if(!isNaN(productosTotal) && productosTotal !== 0){
-
-    const cantidadProducto = calculo(productosTotal);
-    alert("$ " + cantidadProducto);
-
-} else {
-    alert("La cantidad ingresada deber ser mayor a 0");
-}
-
- let otraCompra = prompt("Desea realizar otra compra? SI/NO");
-
-do{  
-    if ((otraCompra === "Si") || (otraCompra ==="SI") || (otraCompra ==="si")){
-    calculo();
-} else {
-    alert("Gracias por visitar nuestra pagina");
-} 
-
-}while (productosTotal === 0);
+producto1.vender();
+producto2.vender();
+producto5.vender();
+producto9.vender();
