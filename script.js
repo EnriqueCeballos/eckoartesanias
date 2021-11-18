@@ -21,12 +21,12 @@ let listaProductos = [
     personaje:"Superheroes",
     modelos: [
 
-      new Producto (1, "Buzzlightyear", 300, 0),
-      new Producto (2, "Flash", 300, 4),
-      new Producto (3, "Capitan America", 300, 5),
-      new Producto (4, "Iron Man", 300, 5),
-      new Producto (5, "Superman", 300, 3),
-      new Producto (6, "Batman", 300, 10),
+      new Producto (1, "Buzzlightyear", 500, 0),
+      new Producto (2, "Flash", 500, 4),
+      new Producto (3, "Capitan America", 500, 5),
+      new Producto (4, "Iron Man", 500, 5),
+      new Producto (5, "Superman", 500, 3),
+      new Producto (6, "Batman", 500, 10),
 
     ]
   },
@@ -63,6 +63,8 @@ let listaProductos = [
 
 ]
 
+
+
 // SELECCION DE PERSONAJE
 
 let informacion = "";
@@ -72,10 +74,11 @@ for (const producto of listaProductos) {
 }
 
 let idPersonaje = parseInt(prompt("Comprar muñequitos: " + informacion));
-let personajeSeleccionado = listaProductos.find(producto => producto.id=== idPersonaje);
+let personajeSeleccionado = listaProductos.find(producto => producto.id === idPersonaje);
 
 while(isNaN(idPersonaje) || !personajeSeleccionado) {
   alert("Ingrese una opción valida");
+
   idPersonaje = parseInt(prompt("Comprar muñeco: " + informacion));
   personajeSeleccionado = listaProductos.find(producto => producto.id === idPersonaje);
 }
@@ -86,7 +89,7 @@ while(isNaN(idPersonaje) || !personajeSeleccionado) {
 let informacion2 = "";
 
 for(const modelo of personajeSeleccionado.modelos) {
-    informacion2 += `\n${modelo.idProduct}. ${modelo.personaje}. $ ${modelo.precio} `
+    informacion2 += `\n${modelo.idProduct}. ${modelo.personaje}. $ ${modelo.precio}`;
 }
 
 let idModelo = parseInt(prompt("Seleccione el modelo que desea comprar:  " + informacion2));
@@ -94,6 +97,7 @@ let modeloSeleccionado = personajeSeleccionado.modelos.find(modelo => modelo.idP
 
 while(isNaN(idModelo) || !modeloSeleccionado) {
   alert("Ingrese una opción valida");
+
   idModelo = parseInt(prompt("Seleccione el modelo que desea comprar: " + informacion2));
   modeloSeleccionado = personajeSeleccionado.modelos.find(modelo => modelo.idProduct === idModelo);
 }
@@ -110,10 +114,12 @@ while (isNaN(cantidadMuñecos) || cantidadMuñecos <= 0) {
 
 if (cantidadMuñecos <= modeloSeleccionado.stock && modeloSeleccionado.stock > 0) {
   modeloSeleccionado.vender(cantidadMuñecos);
-  alert("Monto a pagar: $ " + (modeloSeleccionado.precio * cantidadMuñecos))
+
+  alert("Monto a pagar: $ " + (modeloSeleccionado.precio * cantidadMuñecos));
   console.log(modeloSeleccionado);
+
   } else {
-      alert("No hay muñecos disponibles")
+      alert("No hay muñecos disponibles");
   }
 
 
@@ -122,36 +128,60 @@ if (cantidadMuñecos <= modeloSeleccionado.stock && modeloSeleccionado.stock > 0
 let datoContact = [];
 
 function preguntas() {
+
   let nombre = prompt("Ingresar tu nombre completo.");
   datoContact.push(nombre);
+
   while(!(isNaN(nombre))) {
       alert("Nombre no Valido");
       nombre = prompt("Ingresar tu nombre completo.");
       datoContact.push(nombre);
   }   
+
+  let telefono = parseInt(prompt("Ingrese un numero de telefono de contacto."));
+  datoContact.push(telefono);
+
+  while(isNaN(telefono)) {
+      alert("Numero no Valido");
+      telefono = prompt("Ingrese un numero de telefono de contacto.");
+      datoContact.push(telefono);
+ }
+
   let tarjeta = parseInt(prompt("Ingresa tu numero de tarjeta."));
   datoContact.push(tarjeta);
+ 
   while(isNaN(tarjeta)) {
       alert("Numero no Valido");
       tarjeta = prompt("Ingresa tu numero de tarjeta.");
       datoContact.push(tarjeta);
   }   
+
   let correo = prompt("Ingresa tu E-mail");
   datoContact.push(correo);        
 
-  alert("Datos de contacto:\n" + nombre + "\n" + telefono + "\n" + correo + "\n");
+  alert("Datos de contacto:\n" + nombre + "\n" + tarjeta + "\n" + correo + "\n");
 }
 
-let notificaciones = prompt("¿Desea pagar con tarjeta de credito/debito? Ingresa SI o NO.")
+let notificaciones = prompt("¿Desea pagar con tarjeta de credito/debito? Ingresa SI o NO.");
 
-
-notificaciones = notificaciones.toLowerCase()
-console.log(notificaciones)
+notificaciones = notificaciones.toLowerCase();
+console.log(notificaciones);
 
 if (notificaciones === "si") {
   preguntas()
-  alert("Muchas gracias por tu compra!")
+  alert("Muchas gracias por tu compra!");
 } else {
-  alert("Muchas gracias por tu compra, puede imprimir el comprobante y pagarlo en los locales adheridos!")
+  alert("Muchas gracias por tu compra, puede imprimir el comprobante y pagarlo en los locales adheridos!");
 }
 
+
+// METODO DE BUSQUEDA DENTRO DEL ARRAY
+
+const buscarModelo = listaProductos.find((modelos)=>{
+  return modelos.personaje == "Infantiles"
+})
+
+console.log(buscarModelo);
+
+const baratos = listaProductos.filter((modelos) => modelos.personaje = 300);
+console.log(baratos);
