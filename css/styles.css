@@ -34,7 +34,6 @@ nav a{
 .textNav{
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +43,7 @@ nav a{
 .textNav p{
     margin: 0px;
     padding: 0px;
+    color: white;
 }
 body{
     background-color: #5A9679;
@@ -101,6 +101,10 @@ footer{
     text-decoration: none;
     list-style: none;
     
+}
+.footerRedes a img{
+    width: 30px;
+    height: 30px;
 }
 
 .footerContact{
