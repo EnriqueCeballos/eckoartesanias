@@ -159,7 +159,7 @@ function preguntas() {
   let correo = prompt("Ingresa tu E-mail");
   datoContact.push(correo);        
 
-  alert("Datos de contacto:\n" + nombre + "\n" + tarjeta + "\n" + correo + "\n");
+  alert("Datos de contacto:\n" + nombre + "\n" + telefono + "\n" + tarjeta +"\n" + correo + "\n");
 }
 
 let notificaciones = prompt("¿Desea pagar con tarjeta de credito/debito? Ingresa SI o NO.");
