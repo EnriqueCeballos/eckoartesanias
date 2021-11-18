@@ -18,6 +18,7 @@ let listaProductos = [
   // MODELO NUMERO 1
   {
     id: 1,
+    precio: 500,
     personaje:"Superheroes",
     modelos: [
 
@@ -34,6 +35,7 @@ let listaProductos = [
   //  MODELO NUMERO 2
   {
     id: 2,
+    precio: 300,
     personaje:"Dibujos Animados",
     modelos:[
 
@@ -49,6 +51,7 @@ let listaProductos = [
   //  MODELO NUMERO 3
   {
     id: 3,
+    precio: 300,
     personaje:"Infantiles",
     modelos:[
 
@@ -180,8 +183,9 @@ if (notificaciones === "si") {
 const buscarModelo = listaProductos.find((modelos)=>{
   return modelos.personaje == "Infantiles"
 })
-
 console.log(buscarModelo);
 
-const baratos = listaProductos.filter((modelos) => modelos.personaje = 300);
+
+
+const baratos = listaProductos.filter((p) => p.precio == 300);
 console.log(baratos);
