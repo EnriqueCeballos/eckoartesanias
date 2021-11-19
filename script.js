@@ -66,6 +66,12 @@ let listaProductos = [
 
 ]
 
+//  ORDENAMIENTO DE ARRAYS
+
+listaProductos.sort(function(a, b) {
+  if (a.personaje > b.personaje) {
+    return 1;
+  }})
 
 
 // SELECCION DE PERSONAJE
@@ -180,12 +186,15 @@ if (notificaciones === "si") {
 
 // METODO DE BUSQUEDA DENTRO DEL ARRAY
 
-const buscarModelo = listaProductos.find((modelos)=>{
+const buscarModelo = listaProductos.find((modelos)=>
+{
   return modelos.personaje == "Infantiles"
-})
+});
+
 console.log(buscarModelo);
 
 
+const baratos = listaProductos.filter((p) => {p.precio == 300});
 
-const baratos = listaProductos.filter((p) => p.precio == 300);
 console.log(baratos);
+
