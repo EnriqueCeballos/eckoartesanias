@@ -69,9 +69,17 @@ let listaProductos = [
 //  ORDENAMIENTO DE ARRAYS
 
 listaProductos.sort(function(a, b) {
+  
   if (a.personaje > b.personaje) {
     return 1;
-  }})
+  }
+  if (a.personaje < b.personaje ) {
+    return -1;
+  }
+  if(a.personaje = b.personaje){
+ return 0;
+  }});
+
 
 
 // SELECCION DE PERSONAJE
@@ -86,7 +94,6 @@ let idPersonaje = parseInt(prompt("Comprar muñequitos: " + informacion));
 let personajeSeleccionado = listaProductos.find(producto => producto.id === idPersonaje);
 
 while(isNaN(idPersonaje) || !personajeSeleccionado) {
-  alert("Ingrese una opción valida");
 
   idPersonaje = parseInt(prompt("Comprar muñeco: " + informacion));
   personajeSeleccionado = listaProductos.find(producto => producto.id === idPersonaje);
@@ -105,7 +112,6 @@ let idModelo = parseInt(prompt("Seleccione el modelo que desea comprar:  " + inf
 let modeloSeleccionado = personajeSeleccionado.modelos.find(modelo => modelo.idProduct === idModelo);
 
 while(isNaN(idModelo) || !modeloSeleccionado) {
-  alert("Ingrese una opción valida");
 
   idModelo = parseInt(prompt("Seleccione el modelo que desea comprar: " + informacion2));
   modeloSeleccionado = personajeSeleccionado.modelos.find(modelo => modelo.idProduct === idModelo);
@@ -117,7 +123,7 @@ while(isNaN(idModelo) || !modeloSeleccionado) {
 let cantidadMuñecos = parseInt(prompt("Ingrese la cantidad de muñecos que desea comprar (Disponible: " +  modeloSeleccionado.stock + ")" ));
 
 while (isNaN(cantidadMuñecos) || cantidadMuñecos <= 0) {
-    alert("Ingrese un valor valido");
+    // alert("Ingrese un valor valido");
     cantidadMuñecos = parseInt(prompt("Ingrese la cantidad de Muñecos que desea comprar: "));
 }
 
@@ -125,8 +131,7 @@ if (cantidadMuñecos <= modeloSeleccionado.stock && modeloSeleccionado.stock > 0
   modeloSeleccionado.vender(cantidadMuñecos);
 
   alert("Monto a pagar: $ " + (modeloSeleccionado.precio * cantidadMuñecos));
-  console.log(modeloSeleccionado);
-
+ 
   } else {
       alert("No hay muñecos disponibles");
   }
@@ -174,7 +179,6 @@ function preguntas() {
 let notificaciones = prompt("¿Desea pagar con tarjeta de credito/debito? Ingresa SI o NO.");
 
 notificaciones = notificaciones.toLowerCase();
-console.log(notificaciones);
 
 if (notificaciones === "si") {
   preguntas()
@@ -191,10 +195,6 @@ const buscarModelo = listaProductos.find((modelos)=>
   return modelos.personaje == "Infantiles"
 });
 
-console.log(buscarModelo);
-
-
 const baratos = listaProductos.filter((p) => {p.precio == 300});
 
-console.log(baratos);
 
