@@ -74,6 +74,7 @@ main{
 p{
     margin: 10px;
     margin-bottom: 30px;
+    font-size: 20px;
 }
 
 /* FOOTER */
@@ -166,7 +167,7 @@ h1{
 .cardProduct:hover{
     transform: scale(1.1, 1.1);
 }
-.cardProduct img{
+.imagen-producto{
     width: 90%;
     height: 300px;
     border-radius: 8px;
@@ -177,9 +178,16 @@ h1{
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 .buy img{
     width: 30px;
     height: 30px;
+}
+
+.nombre-muñeco{
+    padding: 5px;
+
 }
