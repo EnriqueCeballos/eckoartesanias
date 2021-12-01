@@ -1,0 +1,102 @@
+/* CARRITO */
+
+.carritoCard{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(242, 240, 240);
+    width: 90%;
+
+}
+
+.carritoImg{
+    height: 50px;
+    width: 50px;
+}
+
+.carritoTittle{
+    font-size: 25px;
+
+}
+
+.carritoText{
+    font-size: 15px;
+}
+
+
+/* FAVORITOS */
+
+.favoritoCard{
+
+}
+
+.favoritoImg{
+
+}
+
+.favoritoTittle{
+
+}
+
+.favoritoText{
+
+}
+
+/* BOTONES  DEL CARRITO*/
+
+.buttonsBuy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background-color: #9FE3C2;
+    border-radius: 8px;
+}
+
+.buyNow{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.buyNow a{ 
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.buy{
+    margin: 5px;
+}
+
+
+/* BOTONES ANTERIOR Y POSTERIOR DE PAGINA */
+
+.continuarCompra{
+display: flex;
+position: relative;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+margin: 30px;
+}
+
+.previusPage{
+    padding: 10px;
+    color: rgb(17, 17, 17);
+    background-color: gray;
+    border-radius: 10px;
+
+}
+.previusPage a{
+    text-decoration: none;
+}
+
+.nextPage{
+    padding: 10px;
+    color: rgb(252, 242, 242);
+    background-color: #05743e;
+    border-radius: 10px;
+}
+.nextPage a{
+    text-decoration: none;
+}
