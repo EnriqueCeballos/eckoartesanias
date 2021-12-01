@@ -1,5 +1,6 @@
 
-
+const informacionCliente = document.querySelector(`.informacionCliente`);
+document.addEventListener("DOMContentLoaded", () => {
 
 let continuarProceso = document.createElement(`div`);
 continuarProceso.classList.add("informacionDeCliente");
@@ -15,7 +16,7 @@ continuarProceso.onclick = () =>{
 
 } 
 
-function compraMuñecos( ){
+function compraMuñecos(){
 
 // SELECCION DE PERSONAJE
 
@@ -67,7 +68,8 @@ continuarProceso.onclick = () =>{
   <input type="text" placeholder="Telefono" id="telefonoCliente">${telefono}
   <input type="text" placeholder="Direccion" id="direccionCliente">${direccion}
   <input type="text" placeholder="Correo electronico" id="correoCliente">${correo}
-    `
+  `
+  informacionCliente.appendChild(continuarProceso)
 } 
 
 function preguntas() {
@@ -118,4 +120,4 @@ if (notificaciones === "si") {
 } else {
   alert("Muchas gracias por tu compra, puede imprimir el comprobante y pagarlo en los locales adheridos!");
 }
-}
+}})
