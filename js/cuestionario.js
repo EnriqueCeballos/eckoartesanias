@@ -60,16 +60,14 @@ let datoContact = [];
 let continuarProceso = document.createElement(`div`);
 continuarProceso.classList.add("informacionDeCliente");
 continuarProceso.onclick = () =>{
-    
+
   preguntas();
   continuarProceso.innerHTML += `
   <input type="text" placeholder="Nombre" id="nombreCliente">${nombre}
   <input type="text" placeholder="Telefono" id="telefonoCliente">${telefono}
   <input type="text" placeholder="Direccion" id="direccionCliente">${direccion}
   <input type="text" placeholder="Correo electronico" id="correoCliente">${correo}
-  
-  `
-
+    `
 } 
 
 function preguntas() {
