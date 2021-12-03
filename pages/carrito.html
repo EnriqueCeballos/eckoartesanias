@@ -1,91 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/carrito.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/carrito.css" />
     <title>ECKO ARTESANIAS</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="textNav">
+          <a href="../index.html"><p>ECKO</p></a>
+          <a href="../index.html"><p>ARTESANIAS</p></a>
+        </div>
+        <ul>
+          <li><a href="../index.html">INICIO</a></li>
+          <li><a href="product.html">PRODUCTOS</a></li>
+          <li><a href="nosotros.html">NOSOTROS</a></li>
+          <li><a href="contact.html">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<header>
-<nav>
-    <div class="textNav">
-        <a href="../index.html"><p>ECKO</p></a>
-        <a href="../index.html"><p>ARTESANIAS</p></a>
-    </div>
-    <ul>
-        <li><a href="../index.html">INICIO</a></li>
-        <li><a href="product.html">PRODUCTOS</a></li>
-        <li><a href="nosotros.html">NOSOTROS</a></li>
-        <li><a href="contact.html">CONTACTO</a></li>
-    </ul>
-</nav>
-</header>
+    <h1>CARRITO DE COMPRAS</h1>
 
-<h1>CARRITO DE COMPRAS</h1>
+    <p>AQUI ENCONTRARAS LOS PRODUCTOS QUE HAS SELECCIONADO</p>
 
-<P>AQUI ENCONTRARAS LOS PRODUCTOS QUE HAS SELECCIONADO</P>
-
-<div class="bodyGallery">
-
-    <div id="carrito" class="carritoCard">
+    <div class="bodyGallery">
+      <!-- <div id="carrito" class="carritoCard">
         <img src="" alt="" class="carritoImg">
         <h2 class="carritoTittle"></h2>
         <p class="carritoText"></p>
     </div>
     
-</div>
+</div> -->
 
-<hr>
+      <hr />
+      <div class="listaCarrito"></div>
+      <div id="favorito" class="favoritoCard">
+        <img src="" alt="" class="favoritoImg" />
+        <h2 class="favoritoTittle"></h2>
+        <p class="favoritoText"></p>
+      </div>
 
-<div id="favorito" class="favoritoCard">
-    <img src="" alt="" class="favoritoImg">
-    <h2 class="favoritoTittle"></h2>
-    <p class="favoritoText"></p>
-</div>
+      <hr />
 
-<hr>
-
-
-<div class="continuarCompra">
-    <button class="previusPage"><a href="../index.html">Anterior</a></button>
-    <button class="nextPage"><a href="">Seguir comprando</a></button>
-</div>
-
-<div class="informacionCliente">
-    <div class="informacionDeCliente">
-    </div>
-</div>
-
-</div>
-
-<script src="../js/productos.js"></script>
-<script src="../js/carrito.js"></script>
-<script src="../js/cuestionario.js"></script>
-<footer>
-    
-    <div class="footerRedes">
-        <a href="index.html"><img src="../img/iconos/inicio.png" alt=""> Inicio</a>
-        <a href="https://fb.me/EckoArtesanias"><img src="../img/iconos/facebook.png" alt="">Facebook</a>
-        <a href="https://www.instagram.com/ecko_artesanias/"><img src="../img/iconos/instagram.png" alt="">Instagram</a>
-
+      <div class="continuarCompra">
+        <button class="previusPage">
+          <a href="../index.html">Anterior</a>
+        </button>
+        <button class="nextPage">
+          <a href="datos.html">Seguir comprando</a>
+        </button>
+      </div>
     </div>
 
-    <div class="footerContact">
+    <script src="../js/productos.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cuestionario.js"></script>
+    <footer>
+      <div class="footerRedes">
+        <a href="index.html"
+          ><img src="../img/iconos/inicio.png" alt="" /> Inicio</a
+        >
+        <a href="https://fb.me/EckoArtesanias"
+          ><img src="../img/iconos/facebook.png" alt="" />Facebook</a
+        >
+        <a href="https://www.instagram.com/ecko_artesanias/"
+          ><img src="../img/iconos/instagram.png" alt="" />Instagram</a
+        >
+      </div>
+
+      <div class="footerContact">
         <p>Telefono: (351) 157648718</p>
         <p>Correo Electronico: eckoartesanias@gmail.com</p>
         <p>Dirreccion: Puesto Nº8 - Paseo de Artesanos Barrio Alta Córdoba</p>
-    </div>
-
-
-</footer>
-
-
-</body>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,17 @@
+.informacionCliente{
+width: 100%;
+height: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgb(135, 132, 92);
+}
+
+.informacionDeCliente{
+width: 70%;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgb(143, 221, 211);
+}

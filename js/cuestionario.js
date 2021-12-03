@@ -59,10 +59,12 @@ if (cantidadMuñecos <= listaProductos.stock && listaProductos.stock > 0) {
 let datoContact = [];
 
 let continuarProceso = document.createElement(`div`);
-continuarProceso.classList.add("informacionDeCliente");
-continuarProceso.onclick = () =>{
 
+continuarProceso.classList.add("informacionDeCliente");
+
+continuarProceso.onclick = () =>{
   preguntas();
+  
   continuarProceso.innerHTML += `
   <input type="text" placeholder="Nombre" id="nombreCliente">${nombre}
   <input type="text" placeholder="Telefono" id="telefonoCliente">${telefono}
