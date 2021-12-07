@@ -26,6 +26,10 @@ function mostrarMuñecosEnEspera(personaje) {
   carritoText.textContent = `$${personaje.precio}`;
   carritoText.classList.add(`carritoText`);
 
+  // const precioTotal = document.getElementsByClassName("subTotal");
+  // precioTotal.textContent = `$${subTotal()}`;
+  // precioTotal = () => subTotal();
+
   const eliminar = document.createElement("button");
   eliminar.textContent = "Eliminar";
   eliminar.classList.add("eliminarProducto");
@@ -35,6 +39,7 @@ function mostrarMuñecosEnEspera(personaje) {
   carritoDiv.appendChild(carritoTittle);
   carritoDiv.appendChild(carritoText);
   carritoDiv.appendChild(eliminar);
+  // carritoDiv.appendChild(precioTotal);
 
   listaCarrito.appendChild(carritoDiv);
 }
@@ -59,3 +64,7 @@ function eliminarProducto(id) {
 }
 
 infoCarrito();
+
+// function subTotal(a, b) {
+//   const resultado = a.precio + b.precio;
+// }

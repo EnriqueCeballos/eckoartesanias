@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .carritoCard {
   display: flex;
@@ -11,8 +12,10 @@
   flex-direction: row;
   align-items: center;
   background-color: rgb(245, 243, 243);
-  width: 90%;
+  width: 70%;
   margin: 20px 0px;
+  box-shadow: 0 3px 8px rgb(42 35 35 / 76%);
+  border-radius: 10px;
 }
 
 .carritoImg {
