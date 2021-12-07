@@ -17,9 +17,9 @@ const listaProductos = [
   {
     id: 1,
     precio: 500,
-    personaje: "Buzzlightyear",
+    personaje: "Iron Man",
     stock: 6,
-    img: `img/mini/buzz.jpg`,
+    img: `img/mini/iron.jpg`,
   },
   {
     id: 2,
@@ -38,9 +38,9 @@ const listaProductos = [
   {
     id: 4,
     precio: 500,
-    personaje: "Iron Man",
+    personaje: "Buzzlightyear",
     stock: 3,
-    img: `img/mini/iron.jpg`,
+    img: `img/mini/buzz.jpg`,
   },
   { id: 5, precio: 500, personaje: "Thor", stock: 3, img: `img/mini/thor.jpg` },
   {

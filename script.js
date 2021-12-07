@@ -23,24 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
       pText.textContent = `Precio: $${muñecos.precio}`;
       pText.classList.add("pText");
 
+      const btnBuyNow = document.createElement(`div`);
+      btnBuyNow.classList.add(`buyNow`);
+
       const btnBuy = document.createElement(`button`);
       btnBuy.textContent = "Detalles";
       btnBuy.classList.add(`buttonsBuy`);
       btnBuy.onclick = () => agregarFavorito(muñecos.id);
 
       btnBuy.innerHTML = `
-    
-        <div class="buyNow">
+            
         <a href="pages/product.html">Detalles</a>
         
             <button class="buy">🛒</button>
-          </div>
-        
+      
       `;
+
       cardProduct.appendChild(imagen);
       cardProduct.appendChild(nombreMuñeco);
       cardProduct.appendChild(pText);
-      cardProduct.appendChild(btnBuy);
+      cardProduct.appendChild(btnBuyNow);
+      btnBuyNow.appendChild(btnBuy);
       contenedorMuñecos.appendChild(cardProduct);
     });
   }

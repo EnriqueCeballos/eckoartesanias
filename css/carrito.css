@@ -1,38 +1,60 @@
 /* CARRITO */
-
-.carritoCard {
+.listaCarrito {
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.carritoCard {
+  display: flex;
+  justify-content: space-evenly;
   flex-direction: row;
-  background-color: rgb(242, 240, 240);
+  align-items: center;
+  background-color: rgb(245, 243, 243);
   width: 90%;
+  margin: 20px 0px;
 }
 
 .carritoImg {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 80px;
+  box-shadow: black;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carritoTittle {
   font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carritoText {
-  font-size: 15px;
+  font-size: 25px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* FAVORITOS */
-
-.favoritoCard {
+.eliminarProducto {
+  display: block;
+  margin: 10px 0 10px 0;
+  width: 100px;
+  height: 30px;
+  background-color: #9fe3c2;
+  border-radius: 8px;
 }
 
-.favoritoImg {
-}
-
-.favoritoTittle {
-}
-
-.favoritoText {
+.subTotal {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 30%;
+  margin-bottom: 20px;
 }
 
 /* BOTONES  DEL CARRITO*/
@@ -41,9 +63,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70%;
   background-color: #9fe3c2;
+  padding: 0px 5px;
   border-radius: 8px;
+  margin-bottom: 5px;
 }
 
 .buyNow {
@@ -92,11 +115,11 @@
   text-decoration: none;
 }
 
-.eliminarProducto {
-  display: block;
-  margin: 10px 0 10px 0;
-  width: 100px;
-  height: 30px;
-  background-color: #9fe3c2;
-  border-radius: 8px;
+.tittlePageCarrito {
+  font-size: 30px;
+  margin: 40px 10px;
+}
+.textPageCarrito {
+  font-size: 20px;
+  margin: 30px 10px;
 }
