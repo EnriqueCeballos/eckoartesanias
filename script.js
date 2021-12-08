@@ -1,26 +1,36 @@
-const contenedorMuñecos = document.querySelector(`.galleryProduct`);
+const contenedorMunhecos = document.querySelector(`.galleryProduct`);
 const carritoCompras = document.querySelector(".carritoCompras");
 
 let carrito = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  mostrarMuñecos();
+  mostrarMunhecos();
 
-  function mostrarMuñecos() {
-    listaProductos.forEach((muñecos) => {
+  function mostrarMunhecos() {
+    listaProductos.forEach((munhecos) => {
+      // $(`body`).prepend(`
+      // <div class="cardProduct">
+      //   <img class="imagen-producto" src="${munhecos.img}" alt="" />
+      //   <h3 class="nombre-munheco">${munhecos.personaje}</h3>
+      //   <p class="pText">Precio: $${munhecos.precio}</p>
+      //   <div class="buyNow">
+      //   <button class="buttonsBuy"><a href="pages/product.html">Detalles</a></button>
+      //   <button class="buy">🛒</button>
+      //   </div>
+      // </div>`);
       const cardProduct = document.createElement(`div`);
       cardProduct.classList.add(`cardProduct`);
 
       const imagen = document.createElement(`img`);
       imagen.classList.add(`imagen-producto`);
-      imagen.src = muñecos.img;
+      imagen.src = munhecos.img;
 
-      const nombreMuñeco = document.createElement(`h3`);
-      nombreMuñeco.textContent = muñecos.personaje;
-      nombreMuñeco.classList.add("nombre-muñeco");
+      const nombreMunheco = document.createElement(`h3`);
+      nombreMunheco.textContent = munhecos.personaje;
+      nombreMunheco.classList.add("nombre-munheco");
 
       const pText = document.createElement(`p`);
-      pText.textContent = `Precio: $${muñecos.precio}`;
+      pText.textContent = `Precio: $${munhecos.precio}`;
       pText.classList.add("pText");
 
       const btnBuyNow = document.createElement(`div`);
@@ -29,41 +39,41 @@ document.addEventListener("DOMContentLoaded", () => {
       const btnBuy = document.createElement(`button`);
       btnBuy.textContent = "Detalles";
       btnBuy.classList.add(`buttonsBuy`);
-      btnBuy.onclick = () => agregarFavorito(muñecos.id);
+      btnBuy.onclick = () => agregarFavorito(munhecos.id);
 
       btnBuy.innerHTML = `
-            
-        <a href="pages/product.html">Detalles</a>
-        
-            <button class="buy">🛒</button>
-      
+      <a href="pages/product.html">Detalles</a></button>
+        <button class="buy${munhecos.id}">🛒</button>
       `;
+      $(`.buy${munhecos.id}`).on(`click`, function () {
+        alert(`Agregaste ${munhecos.nombre} al carrito`);
+      });
 
       cardProduct.appendChild(imagen);
-      cardProduct.appendChild(nombreMuñeco);
+      cardProduct.appendChild(nombreMunheco);
       cardProduct.appendChild(pText);
       cardProduct.appendChild(btnBuyNow);
       btnBuyNow.appendChild(btnBuy);
-      contenedorMuñecos.appendChild(cardProduct);
+      contenedorMunhecos.appendChild(cardProduct);
     });
   }
 });
 
 function agregarFavorito(personajeID) {
-  let muñecoSeleccionado = listaProductos.find(
+  let munhecoSeleccionado = listaProductos.find(
     (personaje) => personaje.id === personajeID
   );
 
-  // muñecoSeleccionado = listaProductos.find(function(muñecosEnEspera){
+  // munhecoSeleccionado = listaProductos.find(function(munhecosEnEspera){
 
-  //   if(muñecosEnEspera.id == personajeID)
+  //   if(munhecosEnEspera.id == personajeID)
   //     return true;
   //   else
   //     return false;
   // })
 
   // GUARDAR EL PRODUCTO
-  carrito.push(muñecoSeleccionado);
+  carrito.push(munhecoSeleccionado);
   guardarCarrito();
 }
 function guardarCarrito() {

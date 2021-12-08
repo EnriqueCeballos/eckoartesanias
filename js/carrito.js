@@ -4,10 +4,10 @@ let listaCarrito = obtenerCarrito();
 function infoCarrito() {
   if (listaCarrito == null || listaCarrito == undefined) return;
   for (const producto of listaCarrito) {
-    mostrarMuñecosEnEspera(producto);
+    mostrarMunhecosEnEspera(producto);
   }
 }
-function mostrarMuñecosEnEspera(personaje) {
+function mostrarMunhecosEnEspera(personaje) {
   const listaCarrito = document.querySelector(`.listaCarrito`);
 
   const carritoDiv = document.createElement(`div`);
@@ -34,6 +34,10 @@ function mostrarMuñecosEnEspera(personaje) {
   eliminar.textContent = "Eliminar";
   eliminar.classList.add("eliminarProducto");
   eliminar.onclick = () => eliminarProducto(personaje.id);
+
+  $(`.eliminarProducto`).on(`click`, function () {
+    alert(`Eliminaste ${personaje.nombre} del carrito`);
+  });
 
   carritoDiv.appendChild(carritoImg);
   carritoDiv.appendChild(carritoTittle);
