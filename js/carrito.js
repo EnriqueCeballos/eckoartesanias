@@ -28,15 +28,20 @@ function mostrarMunhecosEnEspera(personaje) {
 
   // const precioTotal = document.getElementsByClassName("subTotal");
   // precioTotal.textContent = `$${subTotal()}`;
-  // precioTotal = () => subTotal();
+  // precioTotal = () => subTotal(personaje.precio);
 
   const eliminar = document.createElement("button");
   eliminar.textContent = "Eliminar";
   eliminar.classList.add("eliminarProducto");
   eliminar.onclick = () => eliminarProducto(personaje.id);
 
-  $(`.eliminarProducto`).on(`click`, function () {
-    console.log(`Eliminaste a ${personaje.personaje} del carrito`);
+  $(`.eliminarProducto`).click(() => {
+    $(`.alertaProducto`)
+      .prepend(`<img class="iconoAprobar" src="/img/iconos/borrar.png" alt="" />
+      <p>Se elimino el ${personaje.personaje} del carrito</p>`);
+    $(`.alertaProducto`).fadeIn(1000, function () {
+      $(`.alertaProducto`).fadeOut(1000);
+    });
   });
 
   carritoDiv.appendChild(carritoImg);

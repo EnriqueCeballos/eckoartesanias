@@ -3,7 +3,7 @@ const carritoCompras = document.querySelector(".carritoCompras");
 
 let carrito = [];
 
-document.addEventListener("DOMContentLoaded", () => {
+$(`document`).ready(function () {
   mostrarMunhecos();
 
   function mostrarMunhecos() {
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
       imagen.src = munhecos.img;
 
       const nombreMunheco = document.createElement(`h3`);
-      nombreMunheco.textContent = munhecos.personaje;
       nombreMunheco.classList.add("nombre-munheco");
+      nombreMunheco.textContent = munhecos.personaje;
 
       const pText = document.createElement(`p`);
-      pText.textContent = `Precio: $${munhecos.precio}`;
       pText.classList.add("pText");
+      pText.textContent = `Precio: $${munhecos.precio}`;
 
       const btnBuyNow = document.createElement(`div`);
       btnBuyNow.classList.add(`buyNow`);
@@ -32,11 +32,23 @@ document.addEventListener("DOMContentLoaded", () => {
       btnBuy.onclick = () => agregarFavorito(munhecos.id);
 
       btnBuy.innerHTML = `
-        <a href="pages/product.html">Detalles</a></button>
+        <p class="textCard">Detalles</p>
           <button class="buy${munhecos.id}">🛒</button>
         `;
-      $(`.buy${munhecos.id}`).on(`click`, function () {
-        alert(`Agregaste ${munhecos.nombre} al carrito`);
+
+      $(`.textCard`).click(() => {
+        $(`.nombre-munheco`).show("slow", function () {
+          $(`.pText`).show("slow");
+        });
+      });
+
+      $(`.buy${munhecos.id}`).click(() => {
+        $(`.compraProducto`)
+          .prepend(`<img class="iconoAprobar" src="/img/iconos/aprobar.png" alt="" />
+            <p>Se agrego ${munhecos.personaje} al carrito</p>`);
+        $(`.alertaProducto`).fadeIn(1000, function () {
+          $(`.alertaProducto`).fadeOut(1000);
+        });
       });
 
       cardProduct.appendChild(imagen);
@@ -82,3 +94,12 @@ carritoGeneral.innerHTML = `
           </div></a>`;
 
 filterGallery.appendChild(carritoGeneral);
+$(`textNav`).css("color", "white").slideUp(1000).delay(1000).slideDown(1000);
+
+$(`textNav`).animate(
+  {
+    opacity: `0`,
+  },
+  "slow",
+  function () {}
+);

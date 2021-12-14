@@ -44,22 +44,45 @@ nav a {
   margin: 0px;
   padding: 0px;
   color: white;
+  opacity: 0.5;
 }
 body {
-  background-color: #5a9679;
+  background-color: #a7dcf3;
 }
 /* #76A698 */
 
+.bodyGallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 #filterGallery {
   background-color: #1a4731;
+  width: 80%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin: 30px;
   border-radius: 8px;
-  flex-wrap: wrap;
+
   color: #9fe3c2;
+}
+.filterGallery__text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.filterGallery__text p {
+  margin-top: 10px;
+}
+
+.textInput {
+  margin-top: 10px;
+}
+.check {
+  margin: 10px;
 }
 
 #filterGallery img {
@@ -180,7 +203,7 @@ footer {
 }
 
 .cardProduct {
-  background-color: #956e69;
+  background-color: #478289;
   height: 470px;
   max-width: 325px;
   border-radius: 8px;
@@ -188,14 +211,21 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: -3px 4px 3px rgb(72, 0, 19);
+  box-shadow: -5px 5px 20px 0px black;
   transition: 0.3s;
 }
 
-.cardProduct p {
+.pText {
+  display: none;
+  color: white;
   margin: 1px;
 }
 
+.nombre-munheco {
+  color: white;
+  display: none;
+  padding: 5px;
+}
 .cardProduct:hover {
   transform: scale(1.1, 1.1);
 }
@@ -215,22 +245,32 @@ footer {
 }
 
 .buy img {
-  width: 30px;
-  height: 30px;
-}
-
-.nombre-muñeco {
-  padding: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 .alertaProducto {
   display: none;
   position: fixed;
-  width: 45px;
+  background-color: white;
+  color: black;
+  width: 200px;
   bottom: 5%;
   right: 2%;
+  border-radius: 8px;
+  margin: 3px;
 }
-
+.compraProducto {
+  display: none;
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: 200px;
+  bottom: 5%;
+  right: 2%;
+  border-radius: 8px;
+  margin: 3px;
+}
 .iconoAprobar {
   width: 20px;
   height: 20px;
