@@ -36,7 +36,7 @@ function mostrarMunhecosEnEspera(personaje) {
   eliminar.onclick = () => eliminarProducto(personaje.id);
 
   $(`.eliminarProducto`).on(`click`, function () {
-    alert(`Eliminaste ${personaje.nombre} del carrito`);
+    console.log(`Eliminaste a ${personaje.personaje} del carrito`);
   });
 
   carritoDiv.appendChild(carritoImg);

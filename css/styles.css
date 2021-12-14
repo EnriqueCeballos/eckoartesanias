@@ -172,8 +172,8 @@ footer {
 }
 .galleryProduct {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 40px;
   justify-content: center;
   align-items: center;
   margin: 40px;
@@ -182,7 +182,7 @@ footer {
 .cardProduct {
   background-color: #956e69;
   height: 470px;
-  max-width: 300px;
+  max-width: 325px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -221,4 +221,17 @@ footer {
 
 .nombre-muñeco {
   padding: 5px;
+}
+
+.alertaProducto {
+  display: none;
+  position: fixed;
+  width: 45px;
+  bottom: 5%;
+  right: 2%;
+}
+
+.iconoAprobar {
+  width: 20px;
+  height: 20px;
 }
