@@ -7,42 +7,33 @@ function infoCarrito() {
     mostrarMunhecosEnEspera(producto);
   }
 }
-function mostrarMunhecosEnEspera(personaje) {
+function mostrarMunhecosEnEspera(nombre) {
   const listaCarrito = document.querySelector(`.listaCarrito`);
 
   const carritoDiv = document.createElement(`div`);
-  carritoDiv.setAttribute("id", personaje.id);
+  carritoDiv.setAttribute("id", nombre.id);
   carritoDiv.classList.add(`carritoCard`);
 
   const carritoImg = document.createElement(`img`);
   carritoImg.classList.add(`carritoImg`);
-  carritoImg.src = `../${personaje.img}`;
+  carritoImg.src = `../${nombre.img}`;
 
   const carritoTittle = document.createElement(`h2`);
-  carritoTittle.textContent = personaje.personaje;
+  carritoTittle.textContent = nombre.nombre;
   carritoTittle.classList.add(`carritoTittle`);
 
   const carritoText = document.createElement(`p`);
-  carritoText.textContent = `$${personaje.precio}`;
+  carritoText.textContent = `$${nombre.precio}`;
   carritoText.classList.add(`carritoText`);
 
   // const precioTotal = document.getElementsByClassName("subTotal");
   // precioTotal.textContent = `$${subTotal()}`;
-  // precioTotal = () => subTotal(personaje.precio);
+  // precioTotal = () => subTotal(nombre.precio);
 
   const eliminar = document.createElement("button");
   eliminar.textContent = "Eliminar";
   eliminar.classList.add("eliminarProducto");
-  eliminar.onclick = () => eliminarProducto(personaje.id);
-
-  $(`.eliminarProducto`).click(() => {
-    $(`.alertaProducto`)
-      .prepend(`<img class="iconoAprobar" src="/img/iconos/borrar.png" alt="" />
-      <p>Se elimino el ${personaje.personaje} del carrito</p>`);
-    $(`.alertaProducto`).fadeIn(1000, function () {
-      $(`.alertaProducto`).fadeOut(1000);
-    });
-  });
+  eliminar.onclick = () => eliminarProducto(nombre.id);
 
   carritoDiv.appendChild(carritoImg);
   carritoDiv.appendChild(carritoTittle);
@@ -70,10 +61,21 @@ function eliminarProducto(id) {
   let productoEliminado = document.getElementById(id);
   productoEliminado.remove();
   guardarCarrito(listaCarrito);
+  mostrarAlertaEliminar();
 }
 
-infoCarrito();
+function mostrarAlertaEliminar() {
+  $(`.alertaProducto`).empty();
+  $(`.alertaProducto`).prepend(`
+      
+      <p>
+      <img class="iconoAprobar" src="/img/iconos/borrar.png" alt="" />
+      Se elimino el producto del carrito correctamente
+      </p>
+      `);
 
-// function subTotal(a, b) {
-//   const resultado = a.precio + b.precio;
-// }
+  $(`.alertaProducto`).fadeIn(2000, function () {
+    $(`.alertaProducto`).fadeOut(2000);
+  });
+}
+infoCarrito();

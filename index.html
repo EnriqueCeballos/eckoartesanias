@@ -39,13 +39,27 @@
     <div class="bodyGallery">
       <div id="filterGallery">
         <div class="filterGallery__text">
-          <p>ORDERNAR POR:</p>
+          <p>BUSCAR:</p>
 
           <div class="textInput">
-            <input type="text" />
+            <input
+              type="text"
+              placeholder="Buscar por nombre"
+              class="busquedaNombre"
+            />
           </div>
-          <div class="check">
-            <input type="checkbox" />
+        </div>
+
+        <div class="filterGallery__text">
+          <p>ORDERNAR:</p>
+
+          <div class="textInput">
+            <select name="" id="" class="ordenarFiltro">
+              <option value=""></option>
+              <option value="alfebaticamente">Alfebaticamente</option>
+              <option value="mayorQue">Precio mayor a menor</option>
+              <option value="menorQue">Precio menor a mayor</option>
+            </select>
           </div>
         </div>
 
@@ -53,21 +67,13 @@
           <p>CATEGORIA:</p>
 
           <div class="textInput">
-            <input type="text" />
-          </div>
-          <div class="check">
-            <input type="checkbox" />
-          </div>
-        </div>
-
-        <div class="filterGallery__text">
-          <p>PRODUCTO:</p>
-
-          <div class="textInput">
-            <input type="text" />
-          </div>
-          <div class="check">
-            <input type="checkbox" />
+            <select name="" id="" class="ordenarCategoria">
+              <option value=""></option>
+              <option value="superheroes">Super Heroes</option>
+              <option value="dibujosAnimados">Dibujos Animados</option>
+              <option value="clasicos">Clasicos</option>
+              <option value="otros">Otros</option>
+            </select>
           </div>
         </div>
 
@@ -90,6 +96,7 @@
     ></script>
     <script src="js/productos.js"></script>
     <script src="script.js"></script>
+    <script src="js/filter.js"></script>
 
     <!-- <script src="js/carrito.js"></script> -->
     <footer>

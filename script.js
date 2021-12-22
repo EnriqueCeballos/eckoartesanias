@@ -2,80 +2,83 @@ const contenedorMunhecos = document.querySelector(`.galleryProduct`);
 const carritoCompras = document.querySelector(".carritoCompras");
 
 let carrito = [];
+function mostrarMunhecos() {
+  $(`.galleryProduct`).empty();
+  listaProductos.forEach((munhecos) => {
+    const cardProduct = document.createElement(`div`);
+    $(cardProduct).addClass(`cardProduct prod-${munhecos.id}`);
 
+    const nombreMunheco = document.createElement(`h3`);
+    nombreMunheco.classList.add(`nombre-munheco`);
+    nombreMunheco.textContent = munhecos.nombre;
+
+    const imagen = document.createElement(`img`);
+    imagen.classList.add(`imagen-producto`);
+    imagen.src = munhecos.img;
+
+    const details = document.createElement(`div`);
+    details.classList.add(`viewDetails`);
+
+    const pText = document.createElement(`p`);
+    pText.classList.add("pText");
+    pText.textContent = `Precio: $${munhecos.precio}`;
+
+    const btnDiv = document.createElement(`div`);
+    btnDiv.classList.add(`btnDiv`);
+
+    const btnBuy = document.createElement(`button`);
+    btnBuy.textContent = "🛒";
+    btnBuy.classList.add(`buy`);
+
+    const btnDetails = document.createElement(`button`);
+    btnDetails.textContent = "Detalles";
+    btnDetails.classList.add(`buttonsDetails`);
+    // btnBuy.onclick = () => agregarFavorito(munhecos.id);
+    cardProduct.appendChild(nombreMunheco);
+    cardProduct.appendChild(imagen);
+    cardProduct.appendChild(details);
+    cardProduct.appendChild(btnDiv);
+    details.appendChild(pText);
+    btnDiv.appendChild(btnDetails);
+    btnDiv.appendChild(btnBuy);
+    contenedorMunhecos.appendChild(cardProduct);
+
+    $(`.prod-${munhecos.id} .buy`).click(() => {
+      agregarFavorito(munhecos.id);
+      mostrarAlertaCompra();
+    });
+
+    $(`.prod-${munhecos.id} .buttonsDetails`).click(() => {
+      $(`.prod-${munhecos.id} .pText`).toggle("slow");
+    });
+  });
+}
 $(`document`).ready(function () {
   mostrarMunhecos();
-
-  function mostrarMunhecos() {
-    listaProductos.forEach((munhecos) => {
-      const cardProduct = document.createElement(`div`);
-      cardProduct.classList.add(`cardProduct`);
-
-      const imagen = document.createElement(`img`);
-      imagen.classList.add(`imagen-producto`);
-      imagen.src = munhecos.img;
-
-      const nombreMunheco = document.createElement(`h3`);
-      nombreMunheco.classList.add("nombre-munheco");
-      nombreMunheco.textContent = munhecos.personaje;
-
-      const pText = document.createElement(`p`);
-      pText.classList.add("pText");
-      pText.textContent = `Precio: $${munhecos.precio}`;
-
-      const btnBuyNow = document.createElement(`div`);
-      btnBuyNow.classList.add(`buyNow`);
-
-      const btnBuy = document.createElement(`button`);
-      btnBuy.textContent = "Detalles";
-      btnBuy.classList.add(`buttonsBuy`);
-      btnBuy.onclick = () => agregarFavorito(munhecos.id);
-
-      btnBuy.innerHTML = `
-        <p class="textCard">Detalles</p>
-          <button class="buy${munhecos.id}">🛒</button>
-        `;
-
-      $(`.textCard`).click(() => {
-        $(`.nombre-munheco`).show("slow", function () {
-          $(`.pText`).show("slow");
-        });
-      });
-
-      $(`.buy${munhecos.id}`).click(() => {
-        $(`.compraProducto`)
-          .prepend(`<img class="iconoAprobar" src="/img/iconos/aprobar.png" alt="" />
-            <p>Se agrego ${munhecos.personaje} al carrito</p>`);
-        $(`.alertaProducto`).fadeIn(1000, function () {
-          $(`.alertaProducto`).fadeOut(1000);
-        });
-      });
-
-      cardProduct.appendChild(imagen);
-      cardProduct.appendChild(nombreMunheco);
-      cardProduct.appendChild(pText);
-      cardProduct.appendChild(btnBuyNow);
-      btnBuyNow.appendChild(btnBuy);
-      contenedorMunhecos.appendChild(cardProduct);
-    });
-  }
 });
 
-function agregarFavorito(personajeID) {
+function agregarFavorito(nombreID) {
   let munhecoSeleccionado = listaProductos.find(
-    (personaje) => personaje.id === personajeID
+    (nombre) => nombre.id === nombreID
   );
   carrito.push(munhecoSeleccionado);
   guardarCarrito();
+  // mostrarAlertaCompra();
 }
 
-// munhecoSeleccionado = listaProductos.find(function(munhecosEnEspera){
+function mostrarAlertaCompra() {
+  $(`.compraProducto`).empty();
+  $(`.compraProducto`).prepend(`
+      
+      <p>
+      <img class="iconoAprobar" src="/img/iconos/aprobar.png" alt="" />
+      Se agrego el producto al carrito
+      </p>`);
 
-//   if(munhecosEnEspera.id == personajeID)
-//     return true;
-//   else
-//     return false;
-// })
+  $(`.compraProducto`).fadeIn(2000, function () {
+    $(`.compraProducto`).fadeOut(2000);
+  });
+}
 
 // GUARDAR EL PRODUCTO
 

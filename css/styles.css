@@ -215,6 +215,16 @@ footer {
   transition: 0.3s;
 }
 
+.btnDiv {
+  display: flex;
+}
+.buttonsDetails {
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
 .pText {
   display: none;
   color: white;
@@ -223,7 +233,6 @@ footer {
 
 .nombre-munheco {
   color: white;
-  display: none;
   padding: 5px;
 }
 .cardProduct:hover {
@@ -232,7 +241,6 @@ footer {
 .imagen-producto {
   width: 100%;
   height: 400px;
-  border-radius: 8px 8px 0px 0px;
 }
 
 .buy {
@@ -255,10 +263,12 @@ footer {
   background-color: white;
   color: black;
   width: 200px;
+  height: 70px;
+  font-size: 18px;
   bottom: 5%;
   right: 2%;
   border-radius: 8px;
-  margin: 3px;
+  margin: auto;
 }
 .compraProducto {
   display: none;
@@ -266,12 +276,21 @@ footer {
   background-color: white;
   color: black;
   width: 200px;
+  height: 70px;
   bottom: 5%;
   right: 2%;
   border-radius: 8px;
-  margin: 3px;
+  margin: auto;
+  font-size: 20px;
 }
 .iconoAprobar {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.prod-28 {
+  display: none;
+}
+.prod-35 {
+  display: none;
 }
