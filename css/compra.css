@@ -1,17 +1,24 @@
-.informacionCliente{
-width: 100%;
-height: 200px;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgb(135, 132, 92);
+.informacionCliente {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(135, 132, 92);
 }
 
-.informacionDeCliente{
-width: 70%;
-height: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgb(143, 221, 211);
+.informacionDeCliente {
+  width: 70%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(143, 221, 211);
+}
+
+.tarjeta_finalizarCompra {
+  padding: 22px;
+  background-color: #c4c4c4;
+  border-radius: 20 px;
+  margin-bottom: 1 rem;
 }

@@ -23,6 +23,10 @@ function mostrarMunhecos() {
     pText.classList.add("pText");
     pText.textContent = `Precio: $${munhecos.precio}`;
 
+    const stock = document.createElement(`p`);
+    stock.classList.add("contadorStock");
+    stock.textContent = `Stock: $${munhecos.stock}`;
+
     const btnDiv = document.createElement(`div`);
     btnDiv.classList.add(`btnDiv`);
 
@@ -33,12 +37,13 @@ function mostrarMunhecos() {
     const btnDetails = document.createElement(`button`);
     btnDetails.textContent = "Detalles";
     btnDetails.classList.add(`buttonsDetails`);
-    // btnBuy.onclick = () => agregarFavorito(munhecos.id);
+
     cardProduct.appendChild(nombreMunheco);
     cardProduct.appendChild(imagen);
     cardProduct.appendChild(details);
     cardProduct.appendChild(btnDiv);
     details.appendChild(pText);
+    details.appendChild(stock);
     btnDiv.appendChild(btnDetails);
     btnDiv.appendChild(btnBuy);
     contenedorMunhecos.appendChild(cardProduct);
@@ -49,7 +54,8 @@ function mostrarMunhecos() {
     });
 
     $(`.prod-${munhecos.id} .buttonsDetails`).click(() => {
-      $(`.prod-${munhecos.id} .pText`).toggle("slow");
+      $(`.prod-${munhecos.id} .pText`).toggle("slow"),
+        $(`.prod-${munhecos.id} .contadorStock`).toggle("slow");
     });
   });
 }
@@ -63,7 +69,13 @@ function agregarFavorito(nombreID) {
   );
   carrito.push(munhecoSeleccionado);
   guardarCarrito();
-  // mostrarAlertaCompra();
+  mostrarAlertaCompra();
+  let subPrecio = vender();
+  let stock = false;
+  for (const munhecos of stock) {
+    if (munhecos.stock > 0) stock = true;
+  }
+  return stock;
 }
 
 function mostrarAlertaCompra() {
@@ -92,8 +104,10 @@ let carritoGeneral = document.createElement(`div`);
 carritoGeneral.classList.add(`carritoGeneral`);
 carritoGeneral.innerHTML = `
 
-          <a href="pages/carrito.html">
-          <div class="fondoCarritoGeneral"><img src="img/iconos/carritoAgregar.png" alt="">
+          <div class="numberContenedor">${carrito.length}</div>
+          <a href="carrito.html">
+          <div class="fondoCarritoGeneral"><img src="../img/iconos/carritoAgregar.png" alt="">
+          
           </div></a>`;
 
 filterGallery.appendChild(carritoGeneral);

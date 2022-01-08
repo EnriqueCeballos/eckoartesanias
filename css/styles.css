@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 /* GENERAL */
@@ -52,11 +53,11 @@ body {
 /* #76A698 */
 
 .bodyGallery {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 40px;
 }
+
 #filterGallery {
   background-color: #1a4731;
   width: 80%;
@@ -86,9 +87,8 @@ body {
 }
 
 #filterGallery img {
-  width: 30px;
-  height: 30px;
-  margin-left: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .fondoCarritoGeneral img {
@@ -225,7 +225,8 @@ footer {
   border-radius: 8px;
 }
 
-.pText {
+.pText,
+.contadorStock {
   display: none;
   color: white;
   margin: 1px;
@@ -240,7 +241,7 @@ footer {
 }
 .imagen-producto {
   width: 100%;
-  height: 400px;
+  height: 380px;
 }
 
 .buy {
@@ -288,9 +289,7 @@ footer {
   height: 25px;
 }
 
-.prod-28 {
-  display: none;
-}
+.prod-28,
 .prod-35 {
   display: none;
 }

@@ -1,125 +1,94 @@
-
-const informacionCliente = document.querySelector(`.informacionCliente`);
+const informacionCliente = document.querySelector(`datosPersonales`);
 document.addEventListener("DOMContentLoaded", () => {
+  //DATOS DE CONTACTO PARA NOTIFICACIONES
 
-let continuarProceso = document.createElement(`div`);
-continuarProceso.classList.add("informacionDeCliente");
-continuarProceso.onclick = () =>{
-  preguntas();
-  continuarProceso.innerHTML += `
-  <input type="text" class="nombreCliente">
-  <input type="text" class="telefonoCliente">
-  <input type="text" class="tarjetaCliente">
-  <input type="text" class="correoCliente">
-  
-  `
+  let datoContact = [];
+});
 
-} 
-
-function compraMuñecos(){
-
-// SELECCION DE PERSONAJE
-
-let informacion = "";
-  
-for (const producto of listaProductos) {
-  informacion += `\n${producto.id}. ${producto.personaje}`;
-}
-let idPersonaje= parseInt(prompt("Comprar muñeco: " + informacion));
-let personajeSeleccionado = listaProductos.find(producto => producto.id === idPersonaje);
-
-while(isNaN(idPersonaje) || !personajeSeleccionado) {
-
-  idPersonaje = parseInt(prompt("Comprar muñeco: " + informacion));
-  personajeSeleccionado = listaProductos.find(producto => producto.id === idPersonaje);
-}
-
-
-//CANTIDAD COMPRADA
-
-let cantidadMuñecos = parseInt(prompt("Ingrese la cantidad de muñecos que desea comprar (Disponible: " +  listaProductos.stock+ ")" ));
-
-while (isNaN(cantidadMuñecos) || cantidadMuñecos <= 0) {
-
-    cantidadMuñecos = parseInt(prompt("Ingrese la cantidad de Muñecos que desea comprar: "));
-}
-
-if (cantidadMuñecos <= listaProductos.stock && listaProductos.stock > 0) {
-  listaProductos.vender(cantidadMuñecos);
-
-  alert("Monto a pagar: $ " + (listaProductos.precio * cantidadMuñecos));
- 
-  } else {
-      alert("No hay muñecos disponibles");
-  }
-
-
-//DATOS DE CONTACTO PARA NOTIFICACIONES
-
-let datoContact = [];
-
-let continuarProceso = document.createElement(`div`);
-
-continuarProceso.classList.add("informacionDeCliente");
-
-continuarProceso.onclick = () =>{
-  preguntas();
-  
-  continuarProceso.innerHTML += `
-  <input type="text" placeholder="Nombre" id="nombreCliente">${nombre}
-  <input type="text" placeholder="Telefono" id="telefonoCliente">${telefono}
-  <input type="text" placeholder="Direccion" id="direccionCliente">${direccion}
-  <input type="text" placeholder="Correo electronico" id="correoCliente">${correo}
-  `
-  informacionCliente.appendChild(continuarProceso)
-} 
-
-function preguntas() {
-
+function guardarDatosPersonales() {
+  // NOMBRE
   let nombre = document.getElementById("nombreCliente");
   datoContact.push(nombre);
 
-  while(!(isNaN(nombre))) {
-      alert("Nombre no Valido");
-      nombre = prompt("Ingresar tu nombre completo.");
-      datoContact.push(nombre);
-  }   
-
- //  SALUDO PERSONALIZADO
-
- let saludo =  document.getElementById("saludo");
- saludo.innerHTML =`<h2>¡Muchas gracias por tu compra, ${nombre}!</h2>`;
-
+  while (!isNaN(nombre)) {
+    $(`.nombreCliente`).css("display", "flex");
+    nombre.innerHTML += `
+    <p class="nameError">INGRESE UN NOMBRE VALIDO</p>
+  `;
+    let nombre = document.getElementById("nombreCliente");
+    datoContact.push(nombre);
+  }
+  // TELEFONO
   let telefono = document.getElementById("telefonoCliente");
   datoContact.push(telefono);
 
-  while(isNaN(telefono)) {
-      alert("Numero no Valido");
-      telefono = document.getElementById("telefonoCliente");;
-      datoContact.push(telefono);
- }
-
-  let direccion = document.getElementById("direccionCliente");;
+  while (isNaN(telefono)) {
+    $(`.telefonoCliente`).css("display", "flex");
+    telefono.innerHTML += `
+    <p class="telError">INGRESE UN TELEFONO VALIDO</p>
+  `;
+    telefono = document.getElementById("telefonoCliente");
+    datoContact.push(telefono);
+  }
+  // DIRECCION
+  let direccion = document.getElementById("direccionCliente");
   datoContact.push(direccion);
- 
-  while(isNaN(direccion)) {
-      alert("Numero no Valido");
-      direccion = document.getElementById("direccionCliente");
-      datoContact.push(direccion);
-  }   
 
-  let correo = document.getElementById("correoCliente");;
-  datoContact.push(correo);        
+  while (isNaN(direccion)) {
+    $(`.direccionCliente`).css("display", "flex");
+    direccion.innerHTML += `
+    <p class="dirError">INGRESE UNA DIRECCION VALIDA</p>
+  `;
+    direccion = document.getElementById("direccionCliente");
+    datoContact.push(direccion);
+  }
+  // EMAIL
+  let email = document.getElementById("emailCliente");
+  datoContact.push(email);
 
+  while (isNaN(email)) {
+    $(`.emailCliente`).css("display", "flex");
+    email.innerHTML += `
+    <p class="emailError">INGRESE UN CORREO ELECTRONICO VALIDO</p>
+  `;
+    email = document.getElementById("emailCliente");
+    datoContact.push(email);
+  }
 }
+$(`.btn-primary`).click(() => {
+  $(`.compraAprobada`).empty();
+  $(`.compraAprobada`).css("display", "flex");
+  $(`.compraAprobada`).prepend(`
+     <img class="iconoAprobar" src="../img/iconos/aprobar.png" alt="" />
+    <p>¡Muchas gracias por tu compra !</p>
+    <a href="../index.html"><button class="returnInicio"> VOLVER AL INICIO</button></a>
+    `);
 
-let notificaciones = prompt("¿Desea pagar con tarjeta de credito/debito? Ingresa SI o NO.");
+  $(`.compraAprobada`).fadeIn(5000, function () {
+    $(`.compraAprobada`).fadeOut(4000);
+  });
+});
 
+$(`.btn-creditCard`).click(() => {
+  $(`.tarjeta_finalizarCompra`).css("display", "flex");
+  $(`.btn-creditCard`).css("display", "none");
+});
+
+// function confirmarCompra() {
+
+// }
+
+/*
+let notificaciones = prompt(
+  "¿Desea pagar con tarjeta de credito/debito? Ingresa SI o NO."
+);
 
 if (notificaciones === "si") {
-  preguntas()
+  preguntas();
   alert("Muchas gracias por tu compra!");
 } else {
-  alert("Muchas gracias por tu compra, puede imprimir el comprobante y pagarlo en los locales adheridos!");
+  alert(
+    "Muchas gracias por tu compra, puede imprimir el comprobante y pagarlo en los locales adheridos!"
+  );
 }
-}})
+*/

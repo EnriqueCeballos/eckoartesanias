@@ -26,9 +26,11 @@ function mostrarMunhecosEnEspera(nombre) {
   carritoText.textContent = `$${nombre.precio}`;
   carritoText.classList.add(`carritoText`);
 
-  // const precioTotal = document.getElementsByClassName("subTotal");
-  // precioTotal.textContent = `$${subTotal()}`;
-  // precioTotal = () => subTotal(nombre.precio);
+  const costoEnvio = document.getElementById(`costoEnvio`);
+  costoEnvio.textContent = `ENVIO: $500`;
+
+  const totalAPagar = document.getElementById(`totalAPagar`);
+  totalAPagar.textContent = `TOTAL: $${nombre.precio}`;
 
   const eliminar = document.createElement("button");
   eliminar.textContent = "Eliminar";
@@ -39,7 +41,6 @@ function mostrarMunhecosEnEspera(nombre) {
   carritoDiv.appendChild(carritoTittle);
   carritoDiv.appendChild(carritoText);
   carritoDiv.appendChild(eliminar);
-  // carritoDiv.appendChild(precioTotal);
 
   listaCarrito.appendChild(carritoDiv);
 }
@@ -49,6 +50,8 @@ function mostrarMunhecosEnEspera(nombre) {
 function guardarCarrito(listaCarrito) {
   let carritoString = JSON.stringify(listaCarrito);
   localStorage.setItem("carrito", carritoString);
+  // let contador = document.getElementsByClassName(`.numberContenedor`);
+  // contador.textContent = carritoString.length().value;
 }
 function obtenerCarrito() {
   let carritoString = localStorage.getItem("carrito");
@@ -59,6 +62,13 @@ function obtenerCarrito() {
 function eliminarProducto(id) {
   listaCarrito = listaCarrito.filter((producto) => producto.id !== id);
   let productoEliminado = document.getElementById(id);
+  // totalAPagar -= precio;
+
+  // const btnAtras = $(".previusPage");
+  // btnAtras.on("click", () => {
+  //   totalAPagar = 0;
+  //   localStorage.clear();
+  // });
   productoEliminado.remove();
   guardarCarrito(listaCarrito);
   mostrarAlertaEliminar();
@@ -79,3 +89,17 @@ function mostrarAlertaEliminar() {
   });
 }
 infoCarrito();
+
+// CORREGIR
+
+// function removeSectionCart(section, price, id) {
+//   section.on("click", (e) => {
+//     e.target.parentNode.parentNode.remove();
+//     totalAPagar -= price;
+//     etiquetaTotal.html(`$ ${totalAPagar}`);
+
+//     if (totalAPagar === 0) {
+//       buyContainer.css("display", "none");
+//     }
+//   });
+// }

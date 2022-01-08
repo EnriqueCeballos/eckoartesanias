@@ -1,0 +1,108 @@
+h1 {
+  margin: 30px;
+  text-align: center;
+}
+
+.finalizarCompra {
+  font-size: 20px;
+  margin: 10px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.finalizarCompraForm {
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.form-control {
+  margin: 5px 0px;
+  width: 200px;
+}
+
+.tarjeta_finalizarCompra {
+  display: none;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.returnInicio,
+.returnInicio a {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(49, 144, 199);
+  border-radius: 10px;
+  margin-top: 10px;
+  color: white;
+}
+.row {
+}
+
+.col-md-12 {
+}
+
+.izquierda_tarjeta {
+}
+
+.numeroDeTarjeta {
+}
+
+#creditCardCVC {
+}
+
+.derecha_tarjeta {
+}
+
+.columna6 {
+}
+
+#creditCardDesde {
+}
+
+#credictCardHasta {
+}
+
+.btn-primary,
+.btn-creditCard {
+  width: 200px;
+}
+
+/* ALERTA ERROR */
+.nameError,
+.emailError,
+.dirError,
+.telError {
+  font-size: 20px;
+  color: red;
+  display: none;
+}
+
+.compraAprobada {
+  position: absolute;
+  width: 50%;
+  height: 288px;
+  align-items: center;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(187, 182, 182);
+  bottom: 347px;
+  right: 430px;
+  border-radius: 10px;
+  box-shadow: -5px 5px 20px 0px black;
+}
+.compraAprobada p {
+  font-size: 40px;
+  color: black;
+}
+.compraAprobada img {
+  width: 50px;
+  height: 50px;
+}

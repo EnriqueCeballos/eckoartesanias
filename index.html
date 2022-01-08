@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/carrito.css" />
     <title>ECKO ARTESANIAS</title>
   </head>
@@ -23,9 +29,9 @@
         </div>
         <ul>
           <li><a href="index.html">INICIO</a></li>
-          <li><a href="product.html">PRODUCTOS</a></li>
-          <li><a href="nosotros.html">NOSOTROS</a></li>
-          <li><a href="contact.html">CONTACTO</a></li>
+          <li><a href="./pages/product.html">PRODUCTOS</a></li>
+          <li><a href="./pages/nosotros.html">NOSOTROS</a></li>
+          <li><a href="./pages/contact.html">CONTACTO</a></li>
         </ul>
       </nav>
     </header>
@@ -37,66 +43,85 @@
     </p>
 
     <div class="bodyGallery">
-      <div id="filterGallery">
-        <div class="filterGallery__text">
-          <p>BUSCAR:</p>
-
-          <div class="textInput">
-            <input
-              type="text"
-              placeholder="Buscar por nombre"
-              class="busquedaNombre"
+      <div
+        id="carouselExampleDark"
+        class="carousel carousel-dark slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img
+              src="./img/mini/feria.jpg"
+              class="d-block w-100"
+              alt="Feria de Alta Córdoba"
             />
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="./img/mini/feria2.jpg"
+              class="d-block w-100"
+              alt="Tribuna de muñecos"
+            />
+            <div class="carousel-caption d-none d-md-block"></div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/mini/feria2.jpg"
+              class="d-block w-100"
+              alt="Muñecos articulados varios"
+            />
+            <div class="carousel-caption d-none d-md-block"></div>
           </div>
         </div>
-
-        <div class="filterGallery__text">
-          <p>ORDERNAR:</p>
-
-          <div class="textInput">
-            <select name="" id="" class="ordenarFiltro">
-              <option value=""></option>
-              <option value="alfebaticamente">Alfebaticamente</option>
-              <option value="mayorQue">Precio mayor a menor</option>
-              <option value="menorQue">Precio menor a mayor</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="filterGallery__text">
-          <p>CATEGORIA:</p>
-
-          <div class="textInput">
-            <select name="" id="" class="ordenarCategoria">
-              <option value=""></option>
-              <option value="superheroes">Super Heroes</option>
-              <option value="dibujosAnimados">Dibujos Animados</option>
-              <option value="clasicos">Clasicos</option>
-              <option value="otros">Otros</option>
-            </select>
-          </div>
-        </div>
-
-        <button class="applyFilter">APLICAR</button>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-
-      <div class="carritoGeneral"></div>
-
-      <h1 id="saludo"></h1>
     </div>
-
-    <div class="galleryProduct"></div>
-
-    <div class="compraProducto"></div>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="js/productos.js"></script>
-    <script src="script.js"></script>
-    <script src="js/filter.js"></script>
 
     <!-- <script src="js/carrito.js"></script> -->
     <footer>

@@ -21,9 +21,8 @@ const guardarLocal = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
 obtenerProductosJSON();
-
 async function obtenerProductosJSON() {
-  await $.getJSON(`../data/productos.json`, function (data) {
+  await $.getJSON("../data/productos.json", function (data) {
     listaProductos = [...data];
     copiaListaProductos = [...data];
   });

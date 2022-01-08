@@ -1,105 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/carrito.css" />
     <title>ECKO ARTESANIAS</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="textNav">
+          <a href="../index.html"><p>ECKO</p></a>
+          <a href="../index.html"><p>ARTESANIAS</p></a>
+        </div>
+        <ul>
+          <li><a href="../index.html">INICIO</a></li>
+          <li><a href="product.html">PRODUCTOS</a></li>
+          <li><a href="nosotros.html">NOSOTROS</a></li>
+          <li><a href="contact.html">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<header>
-<nav>
-    <div class="textNav">
-        <a href="../index.html"><p>ECKO</p></a>
-        <a href="../index.html"><p>ARTESANIAS</p></a>
-    </div>
-    <ul>
-        <li><a href="../index.html">INICIO</a></li>
-        <li><a href="product.html">PRODUCTOS</a></li>
-        <li><a href="nosotros.html">NOSOTROS</a></li>
-        <li><a href="contact.html">CONTACTO</a></li>
-    </ul>
-</nav>
-</header>
+    <h1 class="indexTittle">BIENVENIDOS A ECKO ARTESANIAS</h1>
 
-<h1>CARRITO DE COMPRAS</h1>
+    <p class="indexText">
+      Encontraras miles de muñecos diseñados especialmente para vos.
+    </p>
 
-<P>AQUI ENCONTRARAS LOS PRODUCTOS QUE HAS SELECCIONADO</P>
+    <div class="bodyGallery">
+      <div id="filterGallery">
+        <div class="filterGallery__text">
+          <p>BUSCAR:</p>
 
-<div class="bodyGallery">
+          <div class="textInput">
+            <input
+              type="text"
+              placeholder="Buscar por nombre"
+              class="busquedaNombre"
+            />
+          </div>
+        </div>
 
-<div class="filterGallery">
+        <div class="filterGallery__text">
+          <p>ORDERNAR:</p>
 
-    <div class="filterGallery__text">
-        <p>ORDERNAR POR:</p>
-    </div>
-    <div class="textInput">
-        <input type="text">
-    </div>
-    <div class="check">
-        <input type="checkbox">
-    </div>
+          <div class="textInput">
+            <select name="" id="" class="ordenarFiltro">
+              <option value=""></option>
+              <option value="alfebaticamente">Alfebaticamente</option>
+              <option value="mayorQue">Precio mayor a menor</option>
+              <option value="menorQue">Precio menor a mayor</option>
+            </select>
+          </div>
+        </div>
 
+        <div class="filterGallery__text">
+          <p>CATEGORIA:</p>
 
-    <div class="filterGallery__text">
-        <p>CATEGORIA:</p>
-    </div>
-    <div class="textInput">
-        <input type="text">
-    </div>
-    <div class="check">
-        <input type="checkbox">
-    </div>
+          <div class="textInput">
+            <select name="" id="" class="ordenarCategoria">
+              <option value=""></option>
+              <option value="superheroes">Super Heroes</option>
+              <option value="dibujosAnimados">Dibujos Animados</option>
+              <option value="clasicos">Clasicos</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+        </div>
 
+        <button class="applyFilter">APLICAR</button>
+      </div>
 
-    <div class="filterGallery__text">
-        <p>PRODUCTO:</p>
-    </div>
-    <div class="textInput">
-        <input type="text">
-    </div>
-    <div class="check">
-        <input type="checkbox">
-    </div>
-    
-</div>
-
-
-
-<div class="galleryProduct">
-
-
-
-
-</div>
-</div>
-
-
-
-<script src="script.js"></script>
-<footer>
-    
-    <div class="footerRedes">
-        <a href="index.html"><img src="../img/iconos/inicio.png" alt=""> Inicio</a>
-        <a href="https://fb.me/EckoArtesanias"><img src="../img/iconos/facebook.png" alt="">Facebook</a>
-        <a href="https://www.instagram.com/ecko_artesanias/"><img src="../img/iconos/instagram.png" alt="">Instagram</a>
-
+      <div class="carritoGeneral"></div>
     </div>
 
-    <div class="footerContact">
-        <p>Telefono: (351) 157648718</p>
-        <p>Correo Electronico: eckoartesanias@gmail.com</p>
-        <p>Dirreccion: Puesto Nº8 - Paseo de Artesanos Barrio Alta Córdoba</p>
-    </div>
+    <div class="galleryProduct"></div>
 
+    <div class="compraProducto"></div>
 
-</footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/productos.js"></script>
+    <script src="../script.js"></script>
+    <script src="../js/filter.js"></script>
 
+    <footer>
+      <div class="footerRedes">
+        <a href="index.html"
+          ><img src="../img/iconos/inicio.png" alt="" /> Inicio</a
+        >
+        <a href="https://fb.me/EckoArtesanias"
+          ><img src="../img/iconos/facebook.png" alt="" />Facebook</a
+        >
+        <a href="https://www.instagram.com/ecko_artesanias/"
+          ><img src="../img/iconos/instagram.png" alt="" />Instagram</a
+        >
+      </div>
 
-</body>
+      <div class="footerContact">
+        <p class="footerText">Telefono: (351) 157648718</p>
+        <p class="footerText">Correo Electronico: eckoartesanias@gmail.com</p>
+        <p class="footerText">
+          Dirreccion: Puesto Nº8 - Paseo de Artesanos Barrio Alta Córdoba
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

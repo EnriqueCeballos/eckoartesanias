@@ -1,62 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/compra.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/datos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/compra.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="textNav">
-                <a href="../index.html"><p>ECKO</p></a>
-                <a href="../index.html"><p>ARTESANIAS</p></a>
-            </div>
-            <ul>
-                <li><a href="../index.html">INICIO</a></li>
-                <li><a href="product.html">PRODUCTOS</a></li>
-                <li><a href="nosotros.html">NOSOTROS</a></li>
-                <li><a href="contact.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        </header>
-        
-    <div class="bodyGallery">
-
-
-<h1 id="datosTitulo">DATOS PERSONALES</h1>
-<p id="datosTexto">COMPLETA LOS DATOS PARA SEGUIR COMPRANDO</p>
-
-    <div class="informacionCliente">
-        <div class="informacionDeCliente">
+      <nav>
+        <div class="textNav">
+          <a href="../index.html"><p>ECKO</p></a>
+          <a href="../index.html"><p>ARTESANIAS</p></a>
         </div>
-    </div>
+        <ul>
+          <li><a href="../index.html">INICIO</a></li>
+          <li><a href="product.html">PRODUCTOS</a></li>
+          <li><a href="nosotros.html">NOSOTROS</a></li>
+          <li><a href="contact.html">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>FINALIZAR COMPRA</h1>
+    <div class="finalizarCompra">
+      <div class="datosPersonales">
+
+      <h3>Datos Personales</h3>
+      <form onsubmit="return false" class="finalizarCompraForm">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="nombreCliente"
+            placeholder="Ingrese su nombre"
+          />
+          <p class="nameError"></p>
+        </div>
+        <div class="form-group">
+          <label class="w-100" for="direccion">Direccion:</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Ingrese su direccion"
+            id="direccionCliente"
+          />
+          <p class="dirError"></p>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            class="form-control"
+            type="email"
+            id="emailCliente"
+            placeholder="Ingrese su email"
+          />
+          <p class="emailError"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="w-100" for="tel">Telefono:</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Ingrese su telefono"
+            id="telefonoCliente"
+          />
+          <p class="telError"></p>
+        </div>
 </div>
-<footer>
-    
-    <div class="footerRedes">
-        <a href="index.html"><img src="../img/iconos/inicio.png" alt=""> Inicio</a>
-        <a href="https://fb.me/EckoArtesanias"><img src="../img/iconos/facebook.png" alt="">Facebook</a>
-        <a href="https://www.instagram.com/ecko_artesanias/"><img src="../img/iconos/instagram.png" alt="">Instagram</a>
 
+<!-- BOTON PAGAR CON TARJETA -->
+<div class="form-group">
+  <input class="btn-creditCard" type="submit" value="Pagar con tarjeta" />
+</div>
+
+        <div class="tarjeta_finalizarCompra"> 
+          <h3>Datos de la tarjeta de Credito</h3>
+          <div class="row">
+            <div class="col-md-12">
+              <img src="" />
+            </div>
+            <div class="izquierda_tarjeta">
+              <label for="creditCardNumber">Número de tarjeta</label>
+              <input
+                class="numeroDeTarjeta"
+                type="text"
+                name=""
+                id="creditCardNumber"
+                placeholder="1213-91011-5678-1234"
+              />
+              <label for="creditCardName">Nombre</label>
+              <input
+                type="text"
+                name=""
+                id="creditCardName"
+                placeholder="PEREZ JUAN"
+              />
+              <label for="creditCardCVC">CVC</label>
+              <input type="text" name="" id="creditCardCVC" placeholder="000" />
+            </div>
+            <div class="derecha_tarjeta">
+              <div class="row">
+                <div class="columna6">
+                  <label for="creditCardDesde">Desde</label>
+                  <input
+                    type="text"
+                    name=""
+                    id="creditCardDesde"
+                    placeholder="00/00"
+                  />
+                </div>
+                <div class="columna6">
+                  <label for="credictCardHasta">Hasta</label>
+                  <input
+                    type="text"
+                    name=""
+                    id="credictCardHasta"
+                    placeholder="00/00"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input class="btn-primary" type="submit" value="Confirmar compra" />
+        </div>
+      </form>
     </div>
+    <div class="compraAprobada"></div>
+    <footer>
+      <div class="footerRedes">
+        <a href="index.html"
+          ><img src="../img/iconos/inicio.png" alt="" /> Inicio</a
+        >
+        <a href="https://fb.me/EckoArtesanias"
+          ><img src="../img/iconos/facebook.png" alt="" />Facebook</a
+        >
+        <a href="https://www.instagram.com/ecko_artesanias/"
+          ><img src="../img/iconos/instagram.png" alt="" />Instagram</a
+        >
+      </div>
 
-    <div class="footerContact">
+      <div class="footerContact">
         <p>Telefono: (351) 157648718</p>
         <p>Correo Electronico: eckoartesanias@gmail.com</p>
         <p>Dirreccion: Puesto Nº8 - Paseo de Artesanos Barrio Alta Córdoba</p>
-    </div>
-
-
-</footer>
-
-
-<script src="../js/cuestionario.js"></script>
-</body>
+      </div>
+    </footer>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+    <script src="../js/cuestionario.js"></script>
+  </body>
 </html>

@@ -4,7 +4,7 @@
     "precio": 500,
     "nombre": "Iron Man",
     "stock": 6,
-    "img": "img/mini/iron.jpg",
+    "img": "../img/mini/iron.jpg",
     "categoria": "superheroes"
   },
   {
@@ -12,7 +12,7 @@
     "precio": 500,
     "nombre": "Flash",
     "stock": 5,
-    "img": "img/mini/flash.jpg",
+    "img": "../img/mini/flash.jpg",
     "categoria": "superheroes"
   },
   {
@@ -20,7 +20,7 @@
     "precio": 500,
     "nombre": "Capitan America",
     "stock": 6,
-    "img": "img/mini/america2.jpg",
+    "img": "../img/mini/america2.jpg",
     "categoria": "superheroes"
   },
   {
@@ -28,7 +28,7 @@
     "precio": 500,
     "nombre": "Buzzlightyear",
     "stock": 3,
-    "img": "img/mini/buzz.jpg",
+    "img": "../img/mini/buzz.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -36,7 +36,7 @@
     "precio": 500,
     "nombre": "Thor",
     "stock": 3,
-    "img": "img/mini/thor.jpg",
+    "img": "../img/mini/thor.jpg",
     "categoria": "superheroes"
   },
   {
@@ -44,7 +44,7 @@
     "precio": 500,
     "nombre": "Batman",
     "stock": 6,
-    "img": "img/mini/batman.jpg",
+    "img": "../img/mini/batman.jpg",
     "categoria": "superheroes"
   },
 
@@ -53,7 +53,7 @@
     "precio": 300,
     "nombre": "Harry Potter",
     "stock": 3,
-    "img": "img/mini/harry.jpg",
+    "img": "../img/mini/harry.jpg",
     "categoria": "clasicos"
   },
   {
@@ -61,7 +61,7 @@
     "precio": 300,
     "nombre": "Sherk",
     "stock": 4,
-    "img": "img/mini/sherk.jpg",
+    "img": "../img/mini/sherk.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -69,7 +69,7 @@
     "precio": 300,
     "nombre": "Chavo",
     "stock": 5,
-    "img": "img/mini/chavo.jpg",
+    "img": "../img/mini/chavo.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -77,7 +77,7 @@
     "precio": 300,
     "nombre": "Perrito",
     "stock": 1,
-    "img": "img/mini/perrito.jpg",
+    "img": "../img/mini/perrito.jpg",
     "categoria": "clasicos"
   },
   {
@@ -85,7 +85,7 @@
     "precio": 300,
     "nombre": "Diamante",
     "stock": 1,
-    "img": "img/mini/diamond.jpg",
+    "img": "../img/mini/diamond.jpg",
     "categoria": "clasicos"
   },
   {
@@ -93,7 +93,7 @@
     "precio": 300,
     "nombre": "C3P0",
     "stock": 2,
-    "img": "img/mini/c3p0.jpg",
+    "img": "../img/mini/c3p0.jpg",
     "categoria": "clasicos"
   },
 
@@ -102,7 +102,7 @@
     "precio": 300,
     "nombre": "Vampirina",
     "stock": 6,
-    "img": "img/mini/vampirina.jpg",
+    "img": "../img/mini/vampirina.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -110,7 +110,7 @@
     "precio": 300,
     "nombre": "Hello Kitty",
     "stock": 1,
-    "img": "img/mini/helloKitty.jpg",
+    "img": "../img/mini/helloKitty.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -118,7 +118,7 @@
     "precio": 300,
     "nombre": "Vanellope",
     "stock": 2,
-    "img": "img/mini/vanellope.jpg",
+    "img": "../img/mini/vanellope.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -126,7 +126,7 @@
     "precio": 300,
     "nombre": "Pocoyo",
     "stock": 1,
-    "img": "img/mini/pocoyo.jpg",
+    "img": "../img/mini/pocoyo.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -134,7 +134,7 @@
     "precio": 300,
     "nombre": "Steve",
     "stock": 5,
-    "img": "img/mini/steve.jpg",
+    "img": "../img/mini/steve.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -142,7 +142,7 @@
     "precio": 300,
     "nombre": "Stich",
     "stock": 1,
-    "img": "img/mini/stich.jpg",
+    "img": "../img/mini/stich.jpg",
     "categoria": "dibujosAnimados"
   },
   {
@@ -150,7 +150,7 @@
     "precio": 3000,
     "nombre": "Arturo",
     "stock": 0,
-    "img": "img/mini/arturo.png",
+    "img": "../img/mini/arturo.png",
     "categoria": "invisible"
   },
   {
@@ -158,7 +158,7 @@
     "precio": 5000,
     "nombre": "Lautaro",
     "stock": 0,
-    "img": "img/mini/lautaro.jpg",
+    "img": "../img/mini/lautaro.jpg",
     "categoria": "invisible"
   }
 ]
