@@ -16,16 +16,29 @@ function mostrarMunhecos() {
     imagen.classList.add(`imagen-producto`);
     imagen.src = munhecos.img;
 
+    // DIV QUE MUESTRA EL BOTTON DETALLES
     const details = document.createElement(`div`);
     details.classList.add(`viewDetails`);
 
-    const pText = document.createElement(`p`);
-    pText.classList.add("pText");
-    pText.textContent = `Precio: $${munhecos.precio}`;
+    const textDescripcion = document.createElement(`p`);
+    textDescripcion.classList.add("textDescripcion");
+    textDescripcion.textContent = `${munhecos.descripcion}`;
+
+    const textMedidas = document.createElement(`p`);
+    textMedidas.classList.add("textMedidas");
+    textMedidas.textContent = `${munhecos.medidas}`;
+
+    // DIV QUE CONTIENE PRECIO Y STOCK
+    const priceStock = document.createElement(`div`);
+    priceStock.classList.add(`priceStock`);
+
+    const precioMunheco = document.createElement(`p`);
+    precioMunheco.classList.add("precioMunheco");
+    precioMunheco.textContent = `Precio: $${munhecos.precio}`;
 
     const stock = document.createElement(`p`);
     stock.classList.add("contadorStock");
-    stock.textContent = `Stock: $${munhecos.stock}`;
+    stock.textContent = `Stock: ${munhecos.stock}`;
 
     const btnDiv = document.createElement(`div`);
     btnDiv.classList.add(`btnDiv`);
@@ -40,10 +53,14 @@ function mostrarMunhecos() {
 
     cardProduct.appendChild(nombreMunheco);
     cardProduct.appendChild(imagen);
+    cardProduct.appendChild(priceStock);
     cardProduct.appendChild(details);
     cardProduct.appendChild(btnDiv);
-    details.appendChild(pText);
-    details.appendChild(stock);
+    priceStock.appendChild(precioMunheco);
+    priceStock.appendChild(stock);
+    details.appendChild(textDescripcion);
+    details.appendChild(textMedidas);
+
     btnDiv.appendChild(btnDetails);
     btnDiv.appendChild(btnBuy);
     contenedorMunhecos.appendChild(cardProduct);
@@ -51,11 +68,13 @@ function mostrarMunhecos() {
     $(`.prod-${munhecos.id} .buy`).click(() => {
       agregarFavorito(munhecos.id);
       mostrarAlertaCompra();
+      sumarNumero(munhecos.precio);
     });
 
     $(`.prod-${munhecos.id} .buttonsDetails`).click(() => {
-      $(`.prod-${munhecos.id} .pText`).toggle("slow"),
-        $(`.prod-${munhecos.id} .contadorStock`).toggle("slow");
+      $(`cardProduct prod-${munhecos.id}`).css("height", "550px;");
+      $(`.prod-${munhecos.id} .textDescripcion`).toggle("slow"),
+        $(`.prod-${munhecos.id} .textMedidas`).toggle("slow");
     });
   });
 }
@@ -70,13 +89,20 @@ function agregarFavorito(nombreID) {
   carrito.push(munhecoSeleccionado);
   guardarCarrito();
   mostrarAlertaCompra();
-  let subPrecio = vender();
-  let stock = false;
-  for (const munhecos of stock) {
-    if (munhecos.stock > 0) stock = true;
-  }
-  return stock;
+  // vender();
 }
+
+function sumarNumero(a, b) {
+  let productoComprado = document.getElementById(`.totalAPagar`);
+  textContent = `$${a.precio + b.precio}`;
+}
+// function vender() {
+//   let stock = false;
+//   for (const munhecos of stock) {
+//     if (munhecos.stock > 0) stock = true;
+//   }
+//   return stock;
+// }
 
 function mostrarAlertaCompra() {
   $(`.compraProducto`).empty();

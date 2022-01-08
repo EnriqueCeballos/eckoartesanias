@@ -50,8 +50,8 @@ function mostrarMunhecosEnEspera(nombre) {
 function guardarCarrito(listaCarrito) {
   let carritoString = JSON.stringify(listaCarrito);
   localStorage.setItem("carrito", carritoString);
-  // let contador = document.getElementsByClassName(`.numberContenedor`);
-  // contador.textContent = carritoString.length().value;
+  let contador = document.getElementsByClassName(`.numberContenedor`);
+  contador.textContent = "carrito.length()";
 }
 function obtenerCarrito() {
   let carritoString = localStorage.getItem("carrito");
@@ -62,13 +62,13 @@ function obtenerCarrito() {
 function eliminarProducto(id) {
   listaCarrito = listaCarrito.filter((producto) => producto.id !== id);
   let productoEliminado = document.getElementById(id);
-  // totalAPagar -= precio;
+  // totalAPagar -= producto.precio;
 
-  // const btnAtras = $(".previusPage");
-  // btnAtras.on("click", () => {
-  //   totalAPagar = 0;
-  //   localStorage.clear();
-  // });
+  const btnAtras = $(".previusPage");
+  btnAtras.on("click", () => {
+    totalAPagar = 0;
+    localStorage.clear();
+  });
   productoEliminado.remove();
   guardarCarrito(listaCarrito);
   mostrarAlertaEliminar();

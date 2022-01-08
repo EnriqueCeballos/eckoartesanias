@@ -60,7 +60,6 @@ body {
 
 #filterGallery {
   background-color: #1a4731;
-  width: 80%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -205,7 +204,6 @@ footer {
 .cardProduct {
   background-color: #478289;
   height: 470px;
-  max-width: 325px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -218,6 +216,10 @@ footer {
 .btnDiv {
   display: flex;
 }
+.priceStock {
+  display: flex;
+  flex-direction: row;
+}
 .buttonsDetails {
   height: 30px;
   padding: 5px;
@@ -225,14 +227,16 @@ footer {
   border-radius: 8px;
 }
 
-.pText,
-.contadorStock {
+.textDescripcion,
+.textMedidas {
   display: none;
   color: white;
   margin: 1px;
 }
 
-.nombre-munheco {
+.nombre-munheco,
+.contadorStock,
+.precioMunheco {
   color: white;
   padding: 5px;
 }
@@ -241,7 +245,7 @@ footer {
 }
 .imagen-producto {
   width: 100%;
-  height: 380px;
+  height: 360px;
 }
 
 .buy {

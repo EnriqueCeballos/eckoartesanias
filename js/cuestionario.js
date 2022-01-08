@@ -11,7 +11,7 @@ function guardarDatosPersonales() {
   datoContact.push(nombre);
 
   while (!isNaN(nombre)) {
-    $(`.nombreCliente`).css("display", "flex");
+    $(`.nombreCliente`).css("display", "block");
     nombre.innerHTML += `
     <p class="nameError">INGRESE UN NOMBRE VALIDO</p>
   `;
@@ -23,7 +23,7 @@ function guardarDatosPersonales() {
   datoContact.push(telefono);
 
   while (isNaN(telefono)) {
-    $(`.telefonoCliente`).css("display", "flex");
+    $(`.telefonoCliente`).css("display", "block");
     telefono.innerHTML += `
     <p class="telError">INGRESE UN TELEFONO VALIDO</p>
   `;
@@ -35,7 +35,7 @@ function guardarDatosPersonales() {
   datoContact.push(direccion);
 
   while (isNaN(direccion)) {
-    $(`.direccionCliente`).css("display", "flex");
+    $(`.direccionCliente`).css("display", "block");
     direccion.innerHTML += `
     <p class="dirError">INGRESE UNA DIRECCION VALIDA</p>
   `;
@@ -47,7 +47,7 @@ function guardarDatosPersonales() {
   datoContact.push(email);
 
   while (isNaN(email)) {
-    $(`.emailCliente`).css("display", "flex");
+    $(`.emailCliente`).css("display", "block");
     email.innerHTML += `
     <p class="emailError">INGRESE UN CORREO ELECTRONICO VALIDO</p>
   `;
@@ -72,6 +72,11 @@ $(`.btn-primary`).click(() => {
 $(`.btn-creditCard`).click(() => {
   $(`.tarjeta_finalizarCompra`).css("display", "flex");
   $(`.btn-creditCard`).css("display", "none");
+});
+
+$(`.btn-secundary`).click(() => {
+  $(`.acceptCard`).toggle("slow").css("display", "flex"),
+    $(`.deniedCard`).toggle("slow").css("display", "flex");
 });
 
 // function confirmarCompra() {
