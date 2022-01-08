@@ -105,7 +105,7 @@ carritoGeneral.classList.add(`carritoGeneral`);
 carritoGeneral.innerHTML = `
 
           <div class="numberContenedor">${carrito.length}</div>
-          <a href="carrito.html">
+          <a href="pages/carrito.html">
           <div class="fondoCarritoGeneral"><img src="../img/iconos/carritoAgregar.png" alt="">
           
           </div></a>`;
