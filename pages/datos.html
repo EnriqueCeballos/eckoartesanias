@@ -36,116 +36,113 @@
       <div class="datosPersonales">
 
       <h3>Datos Personales</h3>
-      <form onsubmit="return false" class="finalizarCompraForm">
+      <form onsubmit="return false" class="formulario">
         <div class="form-group">
-          <label for="nombre">Nombre:</label>
+          <label for="usuario-nombre">Nombre:</label>
           <input
             class="form-control"
             type="text"
-            id="nombreCliente"
+            name="usuario"
+            id="usuario-nombre"
             placeholder="Ingrese su nombre"
           />
-          <p class="nameError"></p>
-        </div>
-        <div class="form-group">
-          <label class="w-100" for="direccion">Direccion:</label>
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Ingrese su direccion"
-            id="direccionCliente"
-          />
-          <p class="dirError"></p>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input
-            class="form-control"
-            type="email"
-            id="emailCliente"
-            placeholder="Ingrese su email"
-          />
-          <p class="emailError"></p>
+          <p id="input-nombre_error" class="mensaje-error">Ingresa un nombre valido</p>
         </div>
 
         <div class="form-group">
-          <label class="w-100" for="tel">Telefono:</label>
+          <label for="usuario-email">Email:</label>
+          <input
+            class="form-control"
+            type="email"
+            name="mail"        
+            id="usuario-email"
+            placeholder="Ingrese su email"
+          />
+          <p id="input-mail_error" class="mensaje-error">Ingresa un correo electronico valido</p>
+        </div>
+
+        <div class="form-group">
+          <label class="w-100" for="usuario-telefono">Telefono:</label>
           <input
             class="form-control"
             type="text"
+            name="telefono"
             placeholder="Ingrese su telefono"
-            id="telefonoCliente"
+            id="usuario-telefono"
           />
-          <p class="telError"></p>
+          <p id="input-telefono_error" class="mensaje-error">Ingresa un telefono valido</p>
+
         </div>
+
+
 </div>
 
 <!-- BOTON PAGAR CON TARJETA -->
 <div class="form-group">
-  <input class="btn-creditCard" type="submit" value="Pagar con tarjeta" />
+  <p> METODOS DE PAGO</p>
+  <a class="btn-creditCard">Tarjetas de credito/debito<img src="/img/iconos/credit-card.png" alt=""></a>
+  <a class="btn-mercadoPago" href="https://www.mercadopago.com.ar/" target="__blank"><p> Mercado Pago</p><img src="/img/iconos/mercadopago.png" alt=""></a>
 </div>
 
         <div class="tarjeta_finalizarCompra"> 
+          <p class="X"><img src="/img/iconos/borrar.png" alt=""></p> 
           <h3>Datos de la tarjeta de Credito</h3>
           <div class="row">
-            <div class="col-md-12">
-              <img src="" />
-            </div>
             <div class="izquierda_tarjeta">
               <label for="creditCardNumber">Número de tarjeta</label>
               <input
                 class="numeroDeTarjeta"
                 type="text"
-                name=""
+                name="numero-tarjeta"
                 id="creditCardNumber"
                 placeholder="1213-91011-5678-1234"
               />
+              <p class="creditCardNumberError">Ingresa un numero valido</p>
               <label for="creditCardName">Nombre</label>
               <input
                 type="text"
-                name=""
+                name="nombre-tarjeta"
                 id="creditCardName"
                 placeholder="PEREZ JUAN"
               />
+              <p class="creditCardNameError">Ingresa un nombre valido</p>
               <label for="creditCardCVC">CVC</label>
               <input type="text" name="" id="creditCardCVC" placeholder="000" />
             </div>
+            <p class="creditCardCVCError">Ingresa un numero valido</p>
             <div class="derecha_tarjeta">
               <div class="row">
                 <div class="columna6">
-                  <label for="creditCardDesde">Desde</label>
+                  <label for="creditCardHasta">Hasta</label>
                   <input
                     type="text"
                     name=""
-                    id="creditCardDesde"
+                    id="creditCardHasta"
                     placeholder="00/00"
                   />
                 </div>
-                <div class="columna6">
-                  <label for="credictCardHasta">Hasta</label>
-                  <input
-                    type="text"
-                    name=""
-                    id="credictCardHasta"
-                    placeholder="00/00"
-                  />
-                </div>
+                <p class="creditCardDesdeError">Ingresa un numero valido</p>
+               
                 <div class="form-group">
-                  <input class="btn-secundary" type="submit" value="Validar tarjeta" />
-                  <p class="acceptCard">SU TARJETA HA SIDO ACEPTADA</p>
-                  <p class="deniedCard">SU TARJETA HA SIDO RECHAZADA</p>
+                  <input id="btn-secundary" type="submit" value="Validar tarjeta" />
+                  <p class="acceptCard">Su tarjeta ha sido aceptada</p>
+                  <p class="deniedCard">Su tarjeta ha sido rechazada</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <input class="btn-primary" type="submit" value="Confirmar compra" />
+
+          
         </div>
       </form>
     </div>
+
+        <div class="btn-finish">
+          <input class="btn-primary" type="submit" value="Confirmar compra" />
     <div class="compraAprobada"></div>
+        </div>
     <footer>
       <div class="footerRedes">
         <a href="index.html"
@@ -171,5 +168,6 @@
     crossorigin="anonymous"
   ></script>
     <script src="../js/cuestionario.js"></script>
+    <!-- <script src="../js/formulario.js"></script> -->
   </body>
 </html>

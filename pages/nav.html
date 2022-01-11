@@ -259,5 +259,24 @@
         </ul>
       </div>
     </div>
+
+
+    <script>
+
+       <!-- CORREGIR -->
+
+ function removeSectionCart(section, price, id) {
+   section.on("click", (e) => {
+     e.target.parentNode.parentNode.remove();
+     totalAPagar -= price;
+     etiquetaTotal.html(`$ ${totalAPagar}`);
+
+    if (totalAPagar === 0) {
+       buyContainer.css("display", "none");
+    }
+   });
+ }
+
+    </script>
   </body>
 </html>

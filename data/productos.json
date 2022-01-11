@@ -155,7 +155,7 @@
     "id": 16,
     "precio": 300,
     "nombre": "Pocoyo",
-    "stock": 1,
+    "stock": 10,
     "img": "../img/mini/pocoyo.jpg",
     "categoria": "dibujosAnimados",
     "descripcion": "Producto realizado con madera de pino cepillado, acompañados con acrilico y una capa de barniz para mantener el color.",

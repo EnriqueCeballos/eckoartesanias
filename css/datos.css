@@ -2,88 +2,6 @@ h1 {
   margin: 30px;
   text-align: center;
 }
-
-.finalizarCompra {
-  font-size: 20px;
-  margin: 10px;
-  padding-right: 40px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-.finalizarCompraForm {
-}
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-}
-
-.form-control {
-  margin: 5px 0px;
-  width: 200px;
-}
-
-.tarjeta_finalizarCompra {
-  display: none;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-}
-.returnInicio,
-.returnInicio a {
-  width: 100px;
-  height: 50px;
-  background-color: rgb(49, 144, 199);
-  border-radius: 10px;
-  margin-top: 10px;
-  color: white;
-}
-.row {
-}
-
-.col-md-12 {
-}
-
-.izquierda_tarjeta {
-}
-
-.numeroDeTarjeta {
-}
-
-#creditCardCVC {
-}
-
-.derecha_tarjeta {
-}
-
-.columna6 {
-}
-
-#creditCardDesde {
-}
-
-#credictCardHasta {
-}
-
-.btn-primary,
-.btn-creditCard {
-  width: 200px;
-}
-
-/* ALERTA ERROR */
-.nameError,
-.emailError,
-.dirError,
-.telError {
-  font-size: 20px;
-  color: red;
-  display: none;
-}
-
 .compraAprobada {
   position: absolute;
   width: 50%;
@@ -99,15 +17,110 @@ h1 {
   box-shadow: -5px 5px 20px 0px black;
 }
 .compraAprobada p {
-  font-size: 40px;
+  font-size: 30px;
   color: black;
+  padding: 20px;
 }
 .compraAprobada img {
   width: 50px;
   height: 50px;
 }
+.datosPersonales {
+  background-color: darkcyan;
+  padding: 50px;
+  border-radius: 20px;
+}
+.finalizarCompra {
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: 100px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.finalizarCompraForm {
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.form-control {
+  margin: 5px 0px;
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tarjeta_finalizarCompra {
+  display: none;
+  width: 50%;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  background-color: navajowhite;
+}
+.returnInicio,
+.returnInicio a {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(49, 144, 199);
+  border-radius: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+.btn-creditCard {
+  width: 200px;
+}
+
+/* ALERTA ERROR */
+.mensaje-error,
+.deniedCard {
+  font-size: 20px;
+  color: red;
+  display: none;
+}
+.mostrar-error {
+  display: flex;
+}
 
 .acceptCard,
 .deniedCard {
   display: none;
+}
+
+.enviarFormulario {
+  margin-top: 30px;
+  height: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creditCardDesdeError,
+.creditCardNumberError,
+.creditCardHastaError,
+.creditCardNameError,
+.creditCardCVCError {
+  display: none;
+  color: red;
+  font-size: 15px;
+}
+.acceptCard {
+  font-size: 20px;
+  color: green;
+  display: none;
+}
+#btn-secundary {
+  background-color: indianred;
+  color: aliceblue;
 }

@@ -203,8 +203,9 @@ footer {
 
 .cardProduct {
   background-color: #478289;
-  height: 470px;
+  height: 550px;
   border-radius: 8px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;

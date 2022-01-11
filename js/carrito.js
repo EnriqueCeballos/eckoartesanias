@@ -1,12 +1,15 @@
 // CARRITO
 let listaCarrito = obtenerCarrito();
 
+let totalAPagar = 0;
+
 function infoCarrito() {
   if (listaCarrito == null || listaCarrito == undefined) return;
   for (const producto of listaCarrito) {
     mostrarMunhecosEnEspera(producto);
   }
 }
+
 function mostrarMunhecosEnEspera(nombre) {
   const listaCarrito = document.querySelector(`.listaCarrito`);
 
@@ -26,12 +29,6 @@ function mostrarMunhecosEnEspera(nombre) {
   carritoText.textContent = `$${nombre.precio}`;
   carritoText.classList.add(`carritoText`);
 
-  const costoEnvio = document.getElementById(`costoEnvio`);
-  costoEnvio.textContent = `ENVIO: $500`;
-
-  const totalAPagar = document.getElementById(`totalAPagar`);
-  totalAPagar.textContent = `TOTAL: $${nombre.precio}`;
-
   const eliminar = document.createElement("button");
   eliminar.textContent = "Eliminar";
   eliminar.classList.add("eliminarProducto");
@@ -45,13 +42,23 @@ function mostrarMunhecosEnEspera(nombre) {
   listaCarrito.appendChild(carritoDiv);
 }
 
+function precioAPagar() {
+  const pagoTotal = document.querySelector(`#pagoTotal`);
+
+  const costoEnvio = document.querySelector(`#costoEnvio`);
+  costoEnvio.textContent = `ENVIO: $500`;
+
+  const totalAPagar = document.createElement(`#totalAPagar`);
+  totalAPagar.textContent = `TOTAL: $${totalAPagar}`;
+
+  pagoTotal.appendChild(costoEnvio);
+  pagoTotal.appendChild(totalAPagar);
+}
 // STORAGE
 
 function guardarCarrito(listaCarrito) {
   let carritoString = JSON.stringify(listaCarrito);
   localStorage.setItem("carrito", carritoString);
-  let contador = document.getElementsByClassName(`.numberContenedor`);
-  contador.textContent = "carrito.length()";
 }
 function obtenerCarrito() {
   let carritoString = localStorage.getItem("carrito");
@@ -62,7 +69,7 @@ function obtenerCarrito() {
 function eliminarProducto(id) {
   listaCarrito = listaCarrito.filter((producto) => producto.id !== id);
   let productoEliminado = document.getElementById(id);
-  // totalAPagar -= producto.precio;
+  totalAPagar -= producto.precio;
 
   const btnAtras = $(".previusPage");
   btnAtras.on("click", () => {
@@ -89,17 +96,3 @@ function mostrarAlertaEliminar() {
   });
 }
 infoCarrito();
-
-// CORREGIR
-
-// function removeSectionCart(section, price, id) {
-//   section.on("click", (e) => {
-//     e.target.parentNode.parentNode.remove();
-//     totalAPagar -= price;
-//     etiquetaTotal.html(`$ ${totalAPagar}`);
-
-//     if (totalAPagar === 0) {
-//       buyContainer.css("display", "none");
-//     }
-//   });
-// }

@@ -2,6 +2,9 @@ const contenedorMunhecos = document.querySelector(`.galleryProduct`);
 const carritoCompras = document.querySelector(".carritoCompras");
 
 let carrito = [];
+$(`document`).ready(function () {
+  mostrarMunhecos();
+});
 function mostrarMunhecos() {
   $(`.galleryProduct`).empty();
   listaProductos.forEach((munhecos) => {
@@ -66,43 +69,35 @@ function mostrarMunhecos() {
     contenedorMunhecos.appendChild(cardProduct);
 
     $(`.prod-${munhecos.id} .buy`).click(() => {
-      agregarFavorito(munhecos.id);
+      agregarFavorito(munhecos.id, munhecos.precio);
       mostrarAlertaCompra();
-      sumarNumero(munhecos.precio);
     });
 
     $(`.prod-${munhecos.id} .buttonsDetails`).click(() => {
-      $(`cardProduct prod-${munhecos.id}`).css("height", "550px;");
-      $(`.prod-${munhecos.id} .textDescripcion`).toggle("slow"),
+      $(`.cardProduct prod-${munhecos.id}`).css("height", "550px;"),
+        $(`.prod-${munhecos.id} .textDescripcion`).toggle("slow"),
         $(`.prod-${munhecos.id} .textMedidas`).toggle("slow");
     });
   });
 }
-$(`document`).ready(function () {
-  mostrarMunhecos();
-});
 
+// function sumarPrecio()
+function detalleProducto(id) {
+  const eventoCompra = listaDeProductos.find((munhecos) => {
+    return munhecos.id === id;
+  });
+}
 function agregarFavorito(nombreID) {
   let munhecoSeleccionado = listaProductos.find(
     (nombre) => nombre.id === nombreID
   );
+
   carrito.push(munhecoSeleccionado);
+
   guardarCarrito();
   mostrarAlertaCompra();
-  // vender();
-}
-
-function sumarNumero(a, b) {
-  let productoComprado = document.getElementById(`.totalAPagar`);
-  textContent = `$${a.precio + b.precio}`;
-}
-// function vender() {
-//   let stock = false;
-//   for (const munhecos of stock) {
-//     if (munhecos.stock > 0) stock = true;
-//   }
-//   return stock;
-// }
+} // let contador = document.getElementsByClassName(`.numberContenedor`);
+// contador.textContent = `${guardarCarrito().length}`;
 
 function mostrarAlertaCompra() {
   $(`.compraProducto`).empty();
@@ -113,8 +108,8 @@ function mostrarAlertaCompra() {
       Se agrego el producto al carrito
       </p>`);
 
-  $(`.compraProducto`).fadeIn(2000, function () {
-    $(`.compraProducto`).fadeOut(2000);
+  $(`.compraProducto`).fadeIn(1500, function () {
+    $(`.compraProducto`).fadeOut(1500);
   });
 }
 
