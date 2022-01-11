@@ -1,13 +1,16 @@
 // CARRITO
 let listaCarrito = obtenerCarrito();
 
-let totalAPagar = 0;
-
 function infoCarrito() {
+  let totalAPagar = 0;
   if (listaCarrito == null || listaCarrito == undefined) return;
   for (const producto of listaCarrito) {
+    totalAPagar += producto.precio;
     mostrarMunhecosEnEspera(producto);
+
+    // precioAPagar(precio);
   }
+  precioAPagar(totalAPagar);
 }
 
 function mostrarMunhecosEnEspera(nombre) {
@@ -42,17 +45,13 @@ function mostrarMunhecosEnEspera(nombre) {
   listaCarrito.appendChild(carritoDiv);
 }
 
-function precioAPagar() {
-  const pagoTotal = document.querySelector(`#pagoTotal`);
-
+function precioAPagar(precio) {
   const costoEnvio = document.querySelector(`#costoEnvio`);
   costoEnvio.textContent = `ENVIO: $500`;
 
-  const totalAPagar = document.createElement(`#totalAPagar`);
-  totalAPagar.textContent = `TOTAL: $${totalAPagar}`;
-
-  pagoTotal.appendChild(costoEnvio);
-  pagoTotal.appendChild(totalAPagar);
+  const precioTotal = document.querySelector(`#precioTotal`);
+  precioTotal.innerHTML = ``;
+  precioTotal.textContent = `TOTAL: $${precio}`;
 }
 // STORAGE
 
@@ -69,16 +68,19 @@ function obtenerCarrito() {
 function eliminarProducto(id) {
   listaCarrito = listaCarrito.filter((producto) => producto.id !== id);
   let productoEliminado = document.getElementById(id);
-  totalAPagar -= producto.precio;
 
-  const btnAtras = $(".previusPage");
-  btnAtras.on("click", () => {
-    totalAPagar = 0;
-    localStorage.clear();
-  });
+  // const btnAtras = $(".previusPage");
+  // btnAtras.on("click", () => {
+  //   localStorage.clear();
+  // });
   productoEliminado.remove();
   guardarCarrito(listaCarrito);
   mostrarAlertaEliminar();
+  let totalAPagar = 0;
+  for (const producto of listaCarrito) {
+    totalAPagar += producto.precio;
+  }
+  precioAPagar(totalAPagar);
 }
 
 function mostrarAlertaEliminar() {
